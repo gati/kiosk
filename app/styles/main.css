@@ -2,7 +2,7 @@
 body{overflow:hidden;padding:0;margin:0}
 ul,li{padding:0;margin:0;list-style:none}
 #background{z-index:1;width:100%;right:0;position:absolute;background:#a6c0d7;height:100%}
-#mid{z-index:2;width:100%;right:0;position:absolute;background:#919191;height:40%;bottom:25%}
+#mid{z-index:2;width:100%;right:0;position:absolute;background:rgba(145,145,145,0.5);height:40%;bottom:25%}
 #ground{z-index:2;width:100%;right:0;background:#62230a;height:20%;position:absolute;bottom:0}
 #panels{position:absolute;left:0;opacity:0;z-index:3;-webkit-transition:opacity 2s ease-in-out;}
 #panels .panel{height:500px;width:500px;float:left;margin:10px;display:inline-block;border:10px solid #333}
