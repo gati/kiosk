@@ -40,7 +40,18 @@ module.exports = function( grunt ) {
         }
       }
     },
-
+    //stylus
+    stylus: {
+      compile: {
+        options: {
+          compress: true,
+          paths: ['node_modules/grunt-contrib-stylus/node_modules']
+        },
+        files: {
+          'app/styles/*.css': ['app/styles/src/*.styl']
+        }
+      }
+    },
     // generate application cache manifest
     manifest:{
       dest: ''
@@ -71,7 +82,13 @@ module.exports = function( grunt ) {
           'app/images/**/*'
         ],
         tasks: 'reload'
-      }
+      },
+      stylus: {
+        files: [
+          'app/styles/src/**/*.styl'
+        ],
+        tasks: 'stylus reload'
+      },
     },
 
     // default lint configuration, change this to match your setup:
@@ -186,4 +203,7 @@ module.exports = function( grunt ) {
   // Alias the `test` task to run the `mocha` task instead
   grunt.registerTask('test', 'server:phantom mocha');
 
+  //stylus support
+  grunt.loadNpmTasks('grunt-contrib-stylus');
+  grunt.registerTask('compass', ['stylus']);
 };
