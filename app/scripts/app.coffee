@@ -6,6 +6,7 @@ class App
 		@panels = @panelContainer.find('.panel')
 		@adjustPanels()
 		@showPanels()
+		@attachEvents()
 
 	adjustPanels : () ->
 		containerWidth = 0
@@ -18,6 +19,15 @@ class App
 	showPanels: () ->
 		@panelContainer.addClass('visible')
 
+	attachEvents : () ->
+		#nav
+		$('header nav').find('a').click () ->
+			el = $(@)
+			siblings = el.parent().siblings()
+			el.parent().toggleClass('selected')
+			siblings.removeClass('selected')
+
 window.App = App
 
+#for testing
 new App()

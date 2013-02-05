@@ -1,6 +1,10 @@
 *{font-family:'Helvetica-Neue-Ultralite',Helvetica;font-weight:300}
 body{overflow:hidden;padding:0;margin:0}
 ul,li{padding:0;margin:0;list-style:none}
+header{overflow:hidden;background:#666;color:#fff;}
+header #sxsw-logo{float:left;padding:10px;border-right:1px solid #333}
+header nav ul li{padding:10px;float:left;border-right:1px solid #333}
+header nav ul li.selected{background:#fff;color:#000}
 #background{z-index:1;width:100%;right:0;position:absolute;background:#a6c0d7;height:100%}
 #mid{z-index:2;width:100%;right:0;position:absolute;background:rgba(145,145,145,0.5);height:40%;bottom:25%}
 #ground{z-index:2;width:100%;right:0;background:#62230a;height:20%;position:absolute;bottom:0}
