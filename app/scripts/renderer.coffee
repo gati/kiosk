@@ -14,11 +14,21 @@ class Renderer
 	
 	render : () =>
 
+		#store kiosk id in DOM
+		@$kiosk.attr('kiosk', @data.id)
+
 		#render the panels
-		for i in @data.panels
-			@$kiosk.append @templates[@data.panels[i].type](@data)
+		for i in [0...@data.panels.length]
+			@$kiosk.append @templates[@data.panels[i].type](@data.panels[i])
 
 		@attachEvents()
+
+		#start the slideshow
+		@slideshow = new SlideShow({
+			intervalSpeed : 3000
+		})
+
+		@slideshow.start()
 
 	attachEvents : () =>
 

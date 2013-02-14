@@ -1,9 +1,30 @@
-class SlideShow extends App
+class SlideShow
 	constructor: (params) ->
-		super()
+		@config = {}
+		@$kiosk = $('[kiosk]')
+		@$panels = @$kiosk.find('.panel')
+		@count = @$panels.length
+		@translateHeight = $(window).outerHeight()
+		@index = 1
 		@config.intervalSpeed = params.intervalSpeed or 5000
 		
-	start : () ->
-		# setInterval () ->
-		# 	#interval
-		# , @config.intervalSpeed
+	start : () =>
+		@slideshowInterval = setInterval () =>
+
+			if @index is @count
+				@translateHeight = $(window).outerHeight()
+				@slide(0)
+				@index = 1
+				return
+			else
+				@index++
+
+			@slide(@translateHeight)
+		, @config.intervalSpeed
+
+	slide : (y) =>
+		@$kiosk.css('-webkit-transform' : 'translateY(-'+y+'px)')
+		@translateHeight += y
+
+
+window.SlideShow = SlideShow

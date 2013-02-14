@@ -13,6 +13,10 @@ header
 	overflow:hidden
 	background:#666
 	color:#fff
+	position:fixed
+	top:0
+	width:100%
+	z-index:1
 	#sxsw-logo
 		float:left;
 		padding:10px
@@ -28,28 +32,27 @@ header
 				color:#000
 				
 #background
-	z-index:1
 	width:100%;
 	right:0
-	position:fixed;
+	position:absolute;
 	top:0;
 	background:rgba(166,192,215,1)
 	height:100%
-	
-#panels
-	position:absolute;
-	left:0
-	opacity:0
-	z-index:3
-	-webkit-transition:opacity 2s ease-in-out
+
+#kiosk
+	-webkit-transition:all 0.5s ease-in-out
+	text-align:center;
+	overflow hidden
 	.panel 
-		height:500px
-		width:500px
-		float:left;
-		margin:10px
-		display:inline-block
-		border:10px solid #333
-	&.visible
+		height:100%
+		width:100%
+		margin:0 auto;
+		display:block
+		padding-top:38px
+		iframe
+			width:100%;
+			height:100%;
+	.panel.visible
 		opacity:1
 
 

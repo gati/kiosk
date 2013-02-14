@@ -16,29 +16,25 @@
     <body>
         <header>
             <div id="sxsw-logo">SXSW2013</div>
-            <nav>
-                <ul>
-                    <li><a href="javascript:void(0);">menu item</a></li>
-                    <li class="selected"><a href="javascript:void(0);">menu item</a></li>
-                    <li><a href="javascript:void(0);">menu item</a></li>
-                </ul>
-            </nav>
         </header>
-        <div id="background"></div>
+        <!-- <div id="background"></div> -->
 
         <!-- This is the only element required for the kiosk -->
-        <div kiosk-container="true"></div>
+        <div id="kiosk" kiosk="true"></div>
 
         <script src="scripts/vendor/jquery.min.js"></script>
+        <script src="scripts/slideshow.js"></script>
+
         <script src="scripts/renderer.js"></script>
         <script src="scripts/kiosk.js"></script>
-        <!-- // <script src="scripts/slideshow.js"></script> -->
 
         <!-- Templates -->
-        <script id="panel-template" template="panel" type="text/x-handlebars-template">
+        <script id="event-template" template="event" type="text/x-handlebars-template">
         </script>
-        <script id="iframe-template" template="iframe" type="text/x-handlebars-template">
-            <iframe src={{url}} seamless></iframe>
+        <script id="url-template" template="url" type="text/x-handlebars-template">
+            <div class="panel">
+                <iframe src={{url}} seamless></iframe>
+            </div>
         </script>
 
         <script>
