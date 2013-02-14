@@ -4,7 +4,8 @@ class SlideShow
 		@$kiosk = $('[kiosk]')
 		@$panels = @$kiosk.find('.slide')
 		@count = @$panels.length
-		@translateHeight = $(window).innerHeight()
+		@winHeight = $(window).innerHeight()
+		@translateHeight = @winHeight
 		@index = 1
 		@config.intervalSpeed = params.intervalSpeed or 5000
 		
@@ -12,7 +13,7 @@ class SlideShow
 
 		@slideshowInterval = setInterval () =>
 			if @index is @count
-				@translateHeight = $(window).outerHeight()
+				@translateHeight = 0
 				@slide(0)
 				@index = 1
 				return
@@ -24,7 +25,6 @@ class SlideShow
 
 	slide : (y) =>
 		@$kiosk.css('-webkit-transform' : 'translateY(-'+y+'px)')
-		@translateHeight += y
-
+		@translateHeight += @winHeight
 
 window.SlideShow = SlideShow
