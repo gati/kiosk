@@ -1,4 +1,5 @@
 class SlideShow
+	
 	constructor: (params) ->
 		@config = {}
 		@$kiosk = $('[kiosk]')
