@@ -2,15 +2,15 @@ class SlideShow
 	constructor: (params) ->
 		@config = {}
 		@$kiosk = $('[kiosk]')
-		@$panels = @$kiosk.find('.panel')
+		@$panels = @$kiosk.find('.slide')
 		@count = @$panels.length
-		@translateHeight = $(window).outerHeight()
+		@translateHeight = $(window).innerHeight()
 		@index = 1
 		@config.intervalSpeed = params.intervalSpeed or 5000
 		
 	start : () =>
-		@slideshowInterval = setInterval () =>
 
+		@slideshowInterval = setInterval () =>
 			if @index is @count
 				@translateHeight = $(window).outerHeight()
 				@slide(0)

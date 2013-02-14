@@ -18,10 +18,12 @@ class Renderer
 		@$kiosk.attr('kiosk', @data.id)
 
 		#render the panels
-		for i in [0...@data.panels.length]
-			@$kiosk.append @templates[@data.panels[i].type](@data.panels[i])
+		slides = @data.slides
+		for i in [0...slides.length]
+			@$kiosk.append @templates[slides[i].type](slides[i])
 
 		@attachEvents()
+		@resizeSlides()
 
 		#start the slideshow
 		@slideshow = new SlideShow({
@@ -30,6 +32,12 @@ class Renderer
 
 		@slideshow.start()
 
+	resizeSlides : () =>
+		#force panels to be viewport height
+		@$kiosk.find('.slide').each () ->
+			$(this).height($(window).innerHeight())
+
 	attachEvents : () =>
+		doc = $(document)
 
 window.Renderer = Renderer

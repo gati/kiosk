@@ -23,16 +23,23 @@
         <div id="kiosk" kiosk="true"></div>
 
         <script src="scripts/vendor/jquery.min.js"></script>
-        <script src="scripts/slideshow.js"></script>
+        <!-- remove for production -->
+        <script src="scripts/DUMMYDATA.js"></script>
 
+        <script src="scripts/slideshow.js"></script>
         <script src="scripts/renderer.js"></script>
         <script src="scripts/kiosk.js"></script>
 
         <!-- Templates -->
-        <script id="event-template" template="event" type="text/x-handlebars-template">
+        <script id="schedule-template" template="schedule" type="text/x-handlebars-template">
+        </script>
+        <script id="image-template" template="image" type="text/x-handlebars-template">
+            <div class="slide">
+                <div class="image" style="background:url({{url}}) 0 0 no-repeat;background-size:cover;"></div>
+            </div>
         </script>
         <script id="url-template" template="url" type="text/x-handlebars-template">
-            <div class="panel">
+            <div class="slide">
                 <iframe src={{url}} seamless></iframe>
             </div>
         </script>
