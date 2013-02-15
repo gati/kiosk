@@ -32,14 +32,32 @@
 
         <!-- Templates -->
         <script id="schedule-template" template="schedule" type="text/x-handlebars-template">
+            <div class="slide">
+                {{#if title}}
+                    <h1>{{title}}</h1>
+                {{/if}}
+            </div>
+        </script>
+        <script id="updates-template" template="updates" type="text/x-handlebars-template">
+            <div class="slide">
+                {{#if title}}
+                    <h1>{{title}}</h1>
+                {{/if}}
+            </div>
         </script>
         <script id="image-template" template="image" type="text/x-handlebars-template">
             <div class="slide">
+                {{#if title}}
+                    <h1>{{title}}</h1>
+                {{/if}}
                 <div class="image" style="background:url({{url}}) 0 0 no-repeat;background-size:cover;"></div>
             </div>
         </script>
         <script id="url-template" template="url" type="text/x-handlebars-template">
             <div class="slide">
+                {{#if title}}
+                    <h1>{{title}}</h1>
+                {{/if}}
                 <iframe src={{url}} seamless></iframe>
             </div>
         </script>

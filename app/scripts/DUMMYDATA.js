@@ -3,6 +3,10 @@ DUMMYDATA = {
 	id : 'AGDASG12512t32egsdh124gsdh21',
 	slides : [
 		{
+			type : 'updates',
+			title : 'Updates'
+		},
+		{
 			type : 'image',
 			url : 'http://1.bp.blogspot.com/-qddG9U2FWPM/URCbNjGeumI/AAAAAAAAGh8/EImXwchgfYk/s640/tycho-sxsw-20121.jpg'
 		},
@@ -20,6 +24,7 @@ DUMMYDATA = {
 		},
 		{
 			type : 'schedule',
+			title : 'Schedule',
 			id: "event_FP10773",
 			key: "event_FP10773",
 			value: {
