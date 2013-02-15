@@ -32,21 +32,33 @@
 
         <!-- Templates -->
         <script id="schedule-template" template="schedule" type="text/x-handlebars-template">
-            <div class="slide">
-                {{#if title}}
-                    <h1>{{title}}</h1>
+            <div class="slide" slide-type="schedule">
+                {{#if venue}}
+                    <h1>{{venue.title}}</h1>
+                    <h2 class="sub">{{venue.street_address}}</h2>
+                {{/if}}
+                <div class="map"><img src="{{venue.map}}" /></div>
+                {{#if schedule}}
+                    <ul>
+                        {{#each schedule}}
+                            <li class="header">{{this._key}}</li>
+                            {{#each this.events}}
+                            <li>{{this.name}} - {{this.formatted_time_to_endtime}}</li>
+                            {{/each}}
+                        {{/each}}
+                    </ul>
                 {{/if}}
             </div>
         </script>
         <script id="updates-template" template="updates" type="text/x-handlebars-template">
-            <div class="slide">
+            <div class="slide" slide-type="updates">
                 {{#if title}}
                     <h1>{{title}}</h1>
                 {{/if}}
             </div>
         </script>
         <script id="image-template" template="image" type="text/x-handlebars-template">
-            <div class="slide">
+            <div class="slide" slide-type="image">
                 {{#if title}}
                     <h1>{{title}}</h1>
                 {{/if}}
@@ -54,7 +66,7 @@
             </div>
         </script>
         <script id="url-template" template="url" type="text/x-handlebars-template">
-            <div class="slide">
+            <div class="slide" slide-type="url">
                 {{#if title}}
                     <h1>{{title}}</h1>
                 {{/if}}
