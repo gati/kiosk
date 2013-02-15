@@ -14,6 +14,8 @@ header nav ul li.selected{background:#fff;color:#000}
 #kiosk .slide .map{width:100%;height:250px;overflow:hidden;}
 #kiosk .slide .map img{width:75%}
 #kiosk [slide-type="schedule"] ul{margin-top:5px;}
-#kiosk [slide-type="schedule"] ul li{border-bottom:1px solid #333;padding:10px 0}
-#kiosk [slide-type="schedule"] ul li.header{background:#ccc}
+#kiosk [slide-type="schedule"] ul li{border-bottom:1px solid #333;padding:10px 0;overflow:hidden;}
+#kiosk [slide-type="schedule"] ul li .event-cell{padding:5px 15px 5px 5px;max-width:33%;float:left;text-align:left}
+#kiosk [slide-type="schedule"] ul li .event-name{font-size:1.2em;font-style:italic;max-width:40%;word-wrap:break-word}
+#kiosk [slide-type="schedule"] ul li.header{background:#ccc;text-align:center}
 #kiosk [slide-type="image"],#kiosk [slide-type="url"],#kiosk [slide-type="updates"],#kiosk .slide.visible{opacity:1}
