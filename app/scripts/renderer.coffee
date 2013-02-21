@@ -27,15 +27,22 @@ class Renderer
 
 		#start the slideshow
 		@slideshow = new SlideShow({
-			intervalSpeed : 3000
+			intervalSpeed : 5000
 		})
 
 		@slideshow.start()
 
 	resizeSlides : () =>
 		#force panels to be viewport height
+		containerWidth = 0
 		@$kiosk.find('.slide').each () ->
-			$(this).height($(window).innerHeight())
+			el = $(this)
+			el.height($(window).height())
+			el.width($(window).outerWidth())
+			containerWidth += el.outerWidth()
+
+		@$kiosk.width(containerWidth)
+
 
 	attachEvents : () =>
 		doc = $(document)

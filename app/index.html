@@ -14,9 +14,9 @@
         <script src="scripts/vendor/handlebars.min.js"></script>
     </head>
     <body>
-        <header>
+       <!--  <header>
             <div id="sxsw-logo">SXSW2013</div>
-        </header>
+        </header> -->
         <!-- <div id="background"></div> -->
 
         <!-- This is the only element required for the kiosk -->
@@ -33,48 +33,56 @@
         <!-- Templates -->
         <script id="schedule-template" template="schedule" type="text/x-handlebars-template">
             <div class="slide" slide-type="schedule">
-                {{#if venue}}
-                    <h1>{{venue.title}}</h1>
-                    <h2 class="sub">{{venue.street_address}}</h2>
-                {{/if}}
-                <div class="map"><img src="{{venue.map}}" /></div>
-                {{#if schedule}}
-                    <ul>
-                        {{#each schedule}}
-                            <li class="header"><h1>{{this._key}}</h1></li>
-                            {{#each this.events}}
-                                <li>
-                                    <div class="event-name event-cell">{{this.name}}</div>
-                                    <div class="event-location event-cell">{{this.room}}</div>
-                                    <div class="event-time event-cell">{{this.formatted_time_to_endtime}}</div>
-                                </li>
+                <div class="content">
+                    {{#if venue}}
+                        <h1>{{venue.title}}</h1>
+                        <h2 class="sub">{{venue.street_address}}</h2>
+                    {{/if}}
+                    <div class="map"><img src="{{venue.map}}" /></div>
+                    {{#if schedule}}
+                        <ul>
+                            {{#each schedule}}
+                                <li class="header"><h1>{{this._key}}</h1></li>
+                                {{#each this.events}}
+                                    <li>
+                                        <div class="event-name event-cell">{{this.name}}</div>
+                                        <div class="event-location event-cell">{{this.room}}</div>
+                                        <div class="event-time event-cell">{{this.formatted_time_to_endtime}}</div>
+                                    </li>
+                                {{/each}}
                             {{/each}}
-                        {{/each}}
-                    </ul>
-                {{/if}}
+                        </ul>
+                    {{/if}}
+                </div>
             </div>
         </script>
         <script id="updates-template" template="updates" type="text/x-handlebars-template">
             <div class="slide" slide-type="updates">
-                {{#if title}}
-                    <h1>{{title}}</h1>
-                {{/if}}
+                <div class="content">
+                    {{#if title}}
+                        <h1>{{title}}</h1>
+                    {{/if}}
+                </div>
             </div>
         </script>
         <script id="image-template" template="image" type="text/x-handlebars-template">
             <div class="slide" slide-type="image">
-                {{#if title}}
-                    <h1>{{title}}</h1>
-                {{/if}}
-                <div class="image" style="background:url({{url}}) 0 0 no-repeat;background-size:cover;"></div>
+                <div class="content">
+                    {{#if title}}
+                        <h1>{{title}}</h1>
+                    {{/if}}
+                    <img class="image" src="{{url}})" />
+                </div>
             </div>
         </script>
         <script id="url-template" template="url" type="text/x-handlebars-template">
             <div class="slide" slide-type="url">
-                {{#if title}}
-                    <h1>{{title}}</h1>
-                {{/if}}
-                <iframe src={{url}} seamless></iframe>
+                <div class="content">
+                    {{#if title}}
+                        <h1>{{title}}</h1>
+                    {{/if}}
+                    <iframe src={{url}} seamless></iframe>
+                </div>
             </div>
         </script>
 
