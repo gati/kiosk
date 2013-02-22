@@ -9,27 +9,7 @@ ul, li
 	padding:0
 	margin:0
 	list-style:none;
-header
-	overflow:hidden
-	background:#666
-	color:#fff
-	position:fixed
-	top:0
-	width:100%
-	z-index:1
-	#sxsw-logo
-		float:left;
-		padding:10px
-		border-right:1px solid #333
-	nav
-		ul
-			li
-				padding:10px
-				float:left;
-				border-right:1px solid #333
-			li.selected
-				background:#fff
-				color:#000			
+		
 #background
 	width:100%;
 	right:0
@@ -38,16 +18,76 @@ header
 	background:rgba(166,192,215,1)
 	height:100%
 
+header
+	overflow:hidden
+	color:#fff
+	position:fixed
+	top:0
+	width:100%
+	z-index:1
+	text-align:center;
+	nav
+		width:80%;
+		overflow:hidden;
+		margin:0 auto;
+		text-align:center;
+		div.option
+			height:75px;
+			width:157px;
+			float:left;
+			position:relative;
+			margin-right:5px;
+
+			div.top 
+				background-color:rgba(80,83,89,1);
+				height:52%;
+				width:100%;
+				z-index:1;
+				-webkit-transform: skew(20deg);
+				&.selected
+					background-color:rgba(246,149,97,1);
+			div.bottom 
+				background-color:rgba(49,58,65,1);
+				height:48%;
+				width:100%;
+				z-index:1;
+				-webkit-transform: skew(-20deg);
+				&.selected
+					background-color:rgba(94,34,10,1);
+			div.icon
+				position:absolute;
+				top:0;
+				height:100%;
+				width:100%;
+				z-index:2;
+				margin:0 auto;
+		div.logo
+			height:75px;
+			width:157px;
+			float:left;
+			background:url('/images/menu-1.png') 0 0 no-repeat;
+		div.shuttle
+			div.icon
+				background:url('/images/menu-2.png') 0 0 no-repeat;
+		div.events
+			div.icon
+				background:url('/images/menu-3.png') 0 0 no-repeat;
+		div.updates
+			div.icon
+				background:url('/images/menu-4.png') 0 0 no-repeat;
+			
+
 #kiosk
 	-webkit-transition:all 0.5s ease-in-out
 	text-align:center;
 	overflow hidden
 	.slide
 		height:100%;
-		max-height:100%
+		max-height:80%
 		width:100%
 		display:block
 		float:left;
+		margin-top:85px;
 		.content
 			width:80%;
 			height:100%;
