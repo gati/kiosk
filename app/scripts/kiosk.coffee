@@ -11,16 +11,10 @@ class Kiosk extends Renderer
 		@fetchKiosk()
 
 	fetchKiosk : () =>
-
-		# $.getJSON 'http://myurl.com?callback=?', (res) =>
-		@setKioskData()
-
-	setKioskData : (data) =>
-		#dummy data 
-		@data = DUMMYDATA
-		console.log @data
-		@render()
-
+		url = 'http://vast-ocean-9515.herokuapp.com/festivals/api/v1/presentation/?venue=1&format=jsonp&callback=?'
+		$.getJSON url, (res) =>
+			@render(res)
+		
 $(document).ready ->
 	window.Kiosk = new Kiosk()
 	window.Kiosk.init()

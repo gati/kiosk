@@ -12,15 +12,22 @@ class Renderer
 			el = $(this)
 			self.templates[el.attr('template')] = Handlebars.compile(el.html())
 	
-	render : () =>
+	render : (data) =>
+		console.log 'RAW DATA', data
 
+		@data = {}
+		@data.id = data.objects[0].id
+		@data.slides = data.objects[0].presentation_screens
+
+		console.log('SLIDES', @data.slides)
 		#store kiosk id in DOM
 		@$kiosk.attr('kiosk', @data.id)
 
 		#render the panels
 		slides = @data.slides
 		for i in [0...slides.length]
-			@$kiosk.append @templates[slides[i].type](slides[i])
+			slide = slides[i].screen
+			@$kiosk.append @templates[slide.slide_type](slide)
 
 		@attachEvents()
 		@resizeSlides()

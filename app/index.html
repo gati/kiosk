@@ -41,6 +41,30 @@
                     <div class="icon"></div>
                     <div class="title">Updates</div>
                 </div>
+                <div class="option updates">
+                    <div class="top"></div>
+                    <div class="bottom"></div>
+                    <div class="icon"></div>
+                    <div class="title">Updates</div>
+                </div>
+                <div class="option updates">
+                    <div class="top"></div>
+                    <div class="bottom"></div>
+                    <div class="icon"></div>
+                    <div class="title">Updates</div>
+                </div>
+                <div class="option updates">
+                    <div class="top"></div>
+                    <div class="bottom"></div>
+                    <div class="icon"></div>
+                    <div class="title">Updates</div>
+                </div>
+                <div class="option updates">
+                    <div class="top"></div>
+                    <div class="bottom"></div>
+                    <div class="icon"></div>
+                    <div class="title">Updates</div>
+                </div>
             </nav>
         </header>
         <!-- <div id="background"></div> -->
@@ -57,56 +81,47 @@
         <script src="scripts/kiosk.js"></script>
 
         <!-- Templates -->
-        <script id="schedule-template" template="schedule" type="text/x-handlebars-template">
-            <div class="slide" slide-type="schedule">
-                <div class="content">
-                    {{#if venue}}
-                        <h1>{{venue.title}}</h1>
-                        <h2 class="sub">{{venue.street_address}}</h2>
-                    {{/if}}
-                    <div class="map"><img src="{{venue.map}}" /></div>
-                    {{#if schedule}}
-                        <ul>
-                            {{#each schedule}}
-                                <li class="header"><h1>{{this._key}}</h1></li>
-                                {{#each this.events}}
-                                    <li>
-                                        <div class="event-name event-cell">{{this.name}}</div>
-                                        <div class="event-location event-cell">{{this.room}}</div>
-                                        <div class="event-time event-cell">{{this.formatted_time_to_endtime}}</div>
-                                    </li>
-                                {{/each}}
-                            {{/each}}
-                        </ul>
-                    {{/if}}
-                </div>
-            </div>
-        </script>
-        <script id="updates-template" template="updates" type="text/x-handlebars-template">
-            <div class="slide" slide-type="updates">
+        <script id="schedule-template" template="venue" type="text/x-handlebars-template">
+            <div class="slide" slide-type="venue">
                 <div class="content">
                     {{#if title}}
                         <h1>{{title}}</h1>
+                        // <h2 class="sub">{{venue.street_address}}</h2>
                     {{/if}}
+                    // <div class="map"><img src="{{venue.map}}" /></div>
+                    // {{#if schedule}}
+                    //     <ul>
+                    //         {{#each schedule}}
+                    //             <li class="header"><h1>{{this._key}}</h1></li>
+                    //             {{#each this.events}}
+                    //                 <li>
+                    //                     <div class="event-name event-cell">{{this.name}}</div>
+                    //                     <div class="event-location event-cell">{{this.room}}</div>
+                    //                     <div class="event-time event-cell">{{this.formatted_time_to_endtime}}</div>
+                    //                 </li>
+                    //             {{/each}}
+                    //         {{/each}}
+                    //     </ul>
+                    // {{/if}}
+                </div>
+            </div>
+        </script>
+        <script id="updates-template" template="announcements" type="text/x-handlebars-template">
+            <div class="slide" slide-type="announcements">
+                <div class="content">
                 </div>
             </div>
         </script>
         <script id="image-template" template="image" type="text/x-handlebars-template">
             <div class="slide" slide-type="image">
                 <div class="content">
-                    {{#if title}}
-                        <h1>{{title}}</h1>
-                    {{/if}}
-                    <img class="image" src="{{url}})" />
+                    <img class="image" src="{{image}}" />
                 </div>
             </div>
         </script>
         <script id="url-template" template="url" type="text/x-handlebars-template">
             <div class="slide" slide-type="url">
                 <div class="content">
-                    {{#if title}}
-                        <h1>{{title}}</h1>
-                    {{/if}}
                     <iframe src={{url}} seamless></iframe>
                 </div>
             </div>
