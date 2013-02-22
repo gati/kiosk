@@ -19,64 +19,94 @@ ul, li
 	height:100%
 
 header
-	overflow:hidden
 	color:#fff
 	position:fixed
 	top:0
 	width:100%
 	z-index:1
 	text-align:center;
+	margin:15px 0;
+	-webkit-perspective:600;
 	nav
 		width:80%;
-		overflow:hidden;
+		// overflow:hidden;
 		margin:0 auto;
-		text-align:center;
+		-webkit-transform:rotateY(40deg)
+		-webkit-transform-origin: 0 0;
 		div.option
 			height:75px;
 			width:157px;
 			float:left;
 			position:relative;
 			margin-right:5px;
+			top:4px;
+			-webkit-transition: all 0.2s ease-in-out;
+			&.selected
+				height:82px; 
+				top:0px;
+				z-index:4;
+				div.top
+					background-color:rgba(246,148,96,1);
+				div.bottom
+					background-color: rgba(93,34,10,1);
+				div.icon
+					background-size: 54%;
+					background-position: 6px 11px;
+				div.title
+					opacity:1;
 
 			div.top 
 				background-color:rgba(80,83,89,1);
-				height:52%;
+				height:47%;
 				width:100%;
+				top:none;
 				z-index:1;
 				-webkit-transform: skew(20deg);
-				&.selected
-					background-color:rgba(246,149,97,1);
 			div.bottom 
 				background-color:rgba(49,58,65,1);
-				height:48%;
+				height:47%;
 				width:100%;
 				z-index:1;
 				-webkit-transform: skew(-20deg);
-				&.selected
-					background-color:rgba(94,34,10,1);
 			div.icon
 				position:absolute;
 				top:0;
 				height:100%;
-				width:100%;
+				width:50%;
 				z-index:2;
-				margin:0 auto;
+				left:31%
+		div.title
+			opacity: 0;
+			color: #c05139;
+			position: absolute;
+			z-index: 5;
+			font-size: 2.2em;
+			font-family: Georgia;
+			font-style: italic;
+			text-align: center;
+			width: 100%;
 		div.logo
 			height:75px;
 			width:157px;
 			float:left;
+			-webkit-transform:rotateY(0)
 			background:url('/images/menu-1.png') 0 0 no-repeat;
 		div.shuttle
 			div.icon
-				background:url('/images/menu-2.png') 0 0 no-repeat;
+				// background:url('/images/menu-2.png') 0 0 no-repeat;
+				background-size: 52%;
+				background-position: 6px 9px;
 		div.events
 			div.icon
-				background:url('/images/menu-3.png') 0 0 no-repeat;
+				// background:url('/images/menu-3.png') 0 0 no-repeat;
+				background-size: 100%;
+				background-position: 6px 9px;
 		div.updates
 			div.icon
-				background:url('/images/menu-4.png') 0 0 no-repeat;
+				// background:url('/images/menu-6.png') 0 0 no-repeat;
+				background-size: 52%;
+				background-position: 6px 9px;
 			
-
 #kiosk
 	-webkit-transition:all 0.5s ease-in-out
 	text-align:center;
@@ -87,7 +117,7 @@ header
 		width:100%
 		display:block
 		float:left;
-		margin-top:85px;
+		margin-top:130px;
 		.content
 			width:80%;
 			height:100%;

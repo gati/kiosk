@@ -2,20 +2,24 @@
 body{overflow:hidden;padding:0;margin:0}
 ul,li{padding:0;margin:0;list-style:none}
 #background{width:100%;right:0;position:absolute;top:0;background:#a6c0d7;height:100%}
-header{overflow:hidden;color:#fff;position:fixed;top:0;width:100%;z-index:1;text-align:center;}
-header nav{width:80%;overflow:hidden;margin:0 auto;text-align:center;}
-header nav div.option{height:75px;width:157px;float:left;position:relative;margin-right:5px;}
-header nav div.option div.top{background-color:#505359;height:52%;width:100%;z-index:1;-webkit-transform:skew(20deg);}
-header nav div.option div.top.selected{background-color:#f69561}
-header nav div.option div.bottom{background-color:#313a41;height:48%;width:100%;z-index:1;-webkit-transform:skew(-20deg);}
-header nav div.option div.bottom.selected{background-color:#5e220a}
-header nav div.option div.icon{position:absolute;top:0;height:100%;width:100%;z-index:2;margin:0 auto}
-header nav div.logo{height:75px;width:157px;float:left;background:url("/images/menu-1.png") 0 0 no-repeat}
-header nav div.shuttle div.icon{background:url("/images/menu-2.png") 0 0 no-repeat}
-header nav div.events div.icon{background:url("/images/menu-3.png") 0 0 no-repeat}
-header nav div.updates div.icon{background:url("/images/menu-4.png") 0 0 no-repeat}
+header{color:#fff;position:fixed;top:0;width:100%;z-index:1;text-align:center;margin:15px 0;-webkit-perspective:600;}
+header nav{width:80%;margin:0 auto;-webkit-transform:rotateY(40deg);-webkit-transform-origin:0 0;}
+header nav div.option{height:75px;width:157px;float:left;position:relative;margin-right:5px;top:4px;-webkit-transition:all .2s ease-in-out;}
+header nav div.option.selected{height:82px;top:0;z-index:4;}
+header nav div.option.selected div.top{background-color:#f69460}
+header nav div.option.selected div.bottom{background-color:#5d220a}
+header nav div.option.selected div.icon{background-size:54%;background-position:6px 11px}
+header nav div.option.selected div.title{opacity:1}
+header nav div.option div.top{background-color:#505359;height:47%;width:100%;top:none;z-index:1;-webkit-transform:skew(20deg)}
+header nav div.option div.bottom{background-color:#313a41;height:47%;width:100%;z-index:1;-webkit-transform:skew(-20deg)}
+header nav div.option div.icon{position:absolute;top:0;height:100%;width:50%;z-index:2;left:31%}
+header nav div.title{opacity:0;color:#c05139;position:absolute;z-index:5;font-size:2.2em;font-family:Georgia;font-style:italic;text-align:center;width:100%}
+header nav div.logo{height:75px;width:157px;float:left;-webkit-transform:rotateY(0);background:url("/images/menu-1.png") 0 0 no-repeat}
+header nav div.shuttle div.icon{background-size:52%;background-position:6px 9px}
+header nav div.events div.icon{background-size:100%;background-position:6px 9px}
+header nav div.updates div.icon{background-size:52%;background-position:6px 9px}
 #kiosk{-webkit-transition:all .5s ease-in-out;text-align:center;overflow:hidden;}
-#kiosk .slide{height:100%;max-height:80%;width:100%;display:block;float:left;margin-top:85px;}
+#kiosk .slide{height:100%;max-height:80%;width:100%;display:block;float:left;margin-top:130px;}
 #kiosk .slide .content{width:80%;height:100%;margin:0 auto;}
 #kiosk .slide .content iframe{width:75%;height:100%;margin:0 auto}
 #kiosk .slide .content .image{height:100%;width:100%}
