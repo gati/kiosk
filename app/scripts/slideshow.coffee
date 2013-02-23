@@ -35,6 +35,8 @@ class SlideShow
 	updateNav : (index) =>
 		console.log(index)
 		@$navOptions.removeClass('selected')
-		@$navOptions.eq(index-1).addClass('selected')
+		@$navOptions.removeClass('flip')
+		current = @$navOptions.eq(index-1)
+		current.addClass('flip').addClass('selected')
 
 window.SlideShow = SlideShow
