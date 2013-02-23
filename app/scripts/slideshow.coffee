@@ -33,7 +33,6 @@ class SlideShow
 		@translateWidth += @winWidth
 
 	updateNav : (index) =>
-		console.log(index)
 		@$navOptions.removeClass('selected')
 		@$navOptions.removeClass('flip')
 		current = @$navOptions.eq(index-1)

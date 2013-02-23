@@ -4,19 +4,16 @@ ul,li{padding:0;margin:0;list-style:none}
 #background{width:100%;right:0;position:absolute;top:0;background:#a6c0d7;height:100%}
 header{color:#fff;position:fixed;top:0;width:100%;z-index:1;text-align:center;margin:15px 0;-webkit-perspective:600;}
 header nav{width:120%;margin:0 auto;text-align:center;margin-left:10%;-webkit-transform:rotateY(40deg);-webkit-transform-origin:0 0;}
-header nav div.option{height:75px;width:157px;float:left;position:relative;margin-right:5px;top:4px;-webkit-transition:all .2s ease-in-out;}
-header nav div.option.selected{height:82px;top:0;z-index:4;}
-header nav div.option.selected div.top{background-color:#f69460}
-header nav div.option.selected div.bottom{background-color:#5d220a}
-header nav div.option.selected div.icon{background-size:54%;background-position:6px 11px}
-header nav div.option.selected div.title{color:#c05139}
-header nav div.option .cube{height:100%}
-header nav div.option.flip .cube{-webkit-transition:all .5s ease-in-out;-webkit-transform:rotateX(360deg)}
+header nav div.option{height:75px;width:150px;float:left;position:relative;top:4px;z-index:4;-webkit-transition:all .2s ease-in-out;}
+header nav div.option .block{height:100%;-webkit-transition:all 1s ease-in-out}
+header nav div.option div.top{background-color:#505359;height:47%;width:100%;top:none;z-index:1;-webkit-transform:skew(20deg)}
+header nav div.option div.bottom{background-color:#313a41;height:47%;width:100%;z-index:1;-webkit-transform:skew(-20deg)}
 header nav div.option div.top{background-color:#505359;height:47%;width:100%;top:none;z-index:1;-webkit-transform:skew(20deg)}
 header nav div.option div.bottom{background-color:#313a41;height:47%;width:100%;z-index:1;-webkit-transform:skew(-20deg)}
 header nav div.option div.icon{position:absolute;top:0;height:100%;width:50%;z-index:2;left:31%}
+header nav div.options{margin-left:150px}
 header nav div.title{color:#505359;position:absolute;z-index:5;font-size:2.2em;font-family:Georgia;font-style:italic;text-align:center;width:100%}
-header nav div.logo{height:75px;width:157px;float:left;-webkit-transform:rotateY(0);background:url("/images/menu-1.png") 0 0 no-repeat}
+header nav div.logo{height:75px;width:157px;float:left;z-index:5;position:absolute;-webkit-transform:rotateY(0);background:url("/images/menu-1.png") 0 0 no-repeat}
 header nav div.shuttle div.icon{background-size:52%;background-position:6px 9px}
 header nav div.events div.icon{background-size:100%;background-position:6px 9px}
 header nav div.updates div.icon{background-size:52%;background-position:6px 9px}
@@ -34,3 +31,18 @@ header nav div.updates div.icon{background-size:52%;background-position:6px 9px}
 #kiosk [slide-type="schedule"] ul li .event-name{font-size:1.2em;font-style:italic;max-width:40%;word-wrap:break-word}
 #kiosk [slide-type="schedule"] ul li.header{background:#ccc;text-align:center}
 #kiosk [slide-type="image"],#kiosk [slide-type="url"],#kiosk [slide-type="updates"],#kiosk .slide.visible{opacity:1}
+.container{width:157px;height:75px;position:relative;top:-5px}
+.box{width:100%;height:100%;position:absolute;z-index:1;-webkit-transform-style:preserve-3d;-webkit-transform:rotateY(23deg) rotateX(-46deg);-webkit-transition:all .5s ease-in-out;left:-44px}
+.option.selected .box{-webkit-transform:rotateY(23deg) rotateX(317deg);}
+.option.selected .box .top{background:#f69460}
+.option.selected .box .front{background:#5d220a}
+.box figure{display:block;position:absolute}
+.box .front,.box .back{width:157px;height:50px}
+.box .right,.box .left{width:37px;height:37px}
+.box .top,.box .bottom{width:157px;height:50px}
+.box .front{background:#313a41;-webkit-transform:rotateY(0) translateZ(25px)}
+.box .back{-webkit-transform:rotateX(180deg) translateZ(25px)}
+.box .right{-webkit-transform:rotateY(90deg) translateZ(39px)}
+.box .left{-webkit-transform:rotateY(-90deg) translateZ(20px)}
+.box .top{background:#505359;-webkit-transform:rotateX(90deg) translateZ(24px)}
+.box .bottom{-webkit-transform:rotateX(-90deg) translateZ(-24px)}

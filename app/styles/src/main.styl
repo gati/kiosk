@@ -27,6 +27,7 @@ header
 	text-align:center;
 	margin:15px 0;
 	-webkit-perspective:600;
+
 	nav
 		width:120%;
 		// overflow:hidden;
@@ -35,34 +36,32 @@ header
 		margin-left:10%;
 		-webkit-transform:rotateY(40deg)
 		-webkit-transform-origin: 0 0;
+		
 		div.option
 			height:75px;
-			width:157px;
+			width:150px;
 			float:left;
 			position:relative;
-			margin-right:5px;
 			top:4px;
+			z-index:4
 			-webkit-transition: all 0.2s ease-in-out;
-			&.selected
-				height:82px; 
-				top:0px;
-				z-index:4;
-				div.top
-					background-color:rgba(246,148,96,1);
-				div.bottom
-					background-color: rgba(93,34,10,1);
-				div.icon
-					background-size: 54%;
-					background-position: 6px 11px;
-				div.title
-					color: #c05139;
-			.cube 
+			.block 
 				height:100%;
-			&.flip
-				.cube
-					-webkit-transition: all 0.5s ease-in-out;
-					-webkit-transform:rotateX(360deg)
+				-webkit-transition: all 1s ease-in-out;
 
+			div.top 
+				background-color:rgba(80,83,89,1);
+				height:47%;
+				width:100%;
+				top:none;
+				z-index:1;
+				-webkit-transform: skew(20deg);
+			div.bottom 
+				background-color:rgba(49,58,65,1);
+				height:47%;
+				width:100%;
+				z-index:1;
+				-webkit-transform: skew(-20deg);
 			div.top 
 				background-color:rgba(80,83,89,1);
 				height:47%;
@@ -83,6 +82,8 @@ header
 				width:50%;
 				z-index:2;
 				left:31%
+		div.options
+			margin-left:150px;
 		div.title
 			color:rgba(80,83,89,1);
 			position: absolute;
@@ -96,6 +97,8 @@ header
 			height:75px;
 			width:157px;
 			float:left;
+			z-index:5;
+			position:absolute;
 			-webkit-transform:rotateY(0)
 			background:url('/images/menu-1.png') 0 0 no-repeat;
 		div.shuttle
@@ -172,4 +175,58 @@ header
 	.slide.visible
 		opacity:1
 
+.container {
+  width: 157px;
+  height: 75px;
+  position: relative;
+  top:-5px;
+}
 
+.box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index:1;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform: rotateY(23deg) rotateX(-46deg);
+  -webkit-transition:all 0.5s ease-in-out
+  left:-44px
+}
+.option
+	&.selected
+		.box
+			-webkit-transform: rotateY(23deg) rotateX(317deg);
+			.top
+				background:rgba(246,148,96,1)
+			.front
+				background:rgba(93,34,10,1)
+
+.box figure {
+  display: block;
+  position: absolute;
+}
+
+.box .front,
+.box .back {
+  width: 157px;
+  height: 50px;
+}
+
+.box .right,
+.box .left {
+  width: 37px;
+  height: 37px;
+}
+
+.box .top,
+.box .bottom {
+  width: 157px;
+  height: 50px;
+}
+
+.box .front  { background:rgba(49,58,65,1);-webkit-transform: rotateY(   0deg ) translateZ(  25px ); }
+.box .back   { -webkit-transform: rotateX( 180deg ) translateZ(  25px ); }
+.box .right  { -webkit-transform: rotateY(  90deg ) translateZ( 39px ); }
+.box .left   { -webkit-transform: rotateY( -90deg ) translateZ( 20px ); }
+.box .top    { background:rgba(80,83,89,1);-webkit-transform: rotateX(  90deg ) translateZ( 24px ); }
+.box .bottom { -webkit-transform: rotateX( -90deg ) translateZ( -24px ); }

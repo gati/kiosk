@@ -19,8 +19,10 @@ class Kiosk extends Renderer
 
 		slides = data.objects[0].presentation_screens
 		@render(data)
-		# for i in [0...slides.length]
-		# 	slide = slides[i].screen 
+		for i in [0...slides.length]
+			slide = slides[i].screen
+			# switch slide.slide_type
+			# 	when 'announcements'
 
 
 		
