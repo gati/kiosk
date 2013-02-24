@@ -10,13 +10,14 @@ header nav div.option div.top{background-color:#505359;height:47%;width:100%;top
 header nav div.option div.bottom{background-color:#313a41;height:47%;width:100%;z-index:1;-webkit-transform:skew(-20deg)}
 header nav div.option div.top{background-color:#505359;height:47%;width:100%;top:none;z-index:1;-webkit-transform:skew(20deg)}
 header nav div.option div.bottom{background-color:#313a41;height:47%;width:100%;z-index:1;-webkit-transform:skew(-20deg)}
-header nav div.option div.icon{position:absolute;top:0;height:100%;width:50%;z-index:2;left:31%}
+header nav div.option div.icon{position:absolute;top:0;height:100%;width:50%;z-index:2;left:31%;}
+header nav div.option div.icon.shuttle{background:url("/images/shuttle.png") 0 0 no-repeat;background-size:70%;background-position:6px 3px}
+header nav div.option div.icon.venue{background:url("/images/venue.png") 0 0 no-repeat;background-size:50%;background-position:6px 7px}
+header nav div.option div.icon.social{background:url("/images/social.png") 0 0 no-repeat;background-size:70%;background-position:6px -3px}
+header nav div.option div.icon.updates{background:url("/images/updates.png") 0 0 no-repeat;background-size:70%;background-position:6px -3px}
 header nav div.options{margin-left:150px}
 header nav div.title{color:#505359;position:absolute;z-index:5;font-size:2.2em;font-family:Georgia;font-style:italic;text-align:center;width:100%;-webkit-transition:all .5s ease-in-out}
-header nav div.logo{height:75px;width:157px;float:left;z-index:5;position:absolute;-webkit-transform:rotateY(0);background:url("/images/menu-1.png") 0 0 no-repeat}
-header nav div.shuttle div.icon{background-size:52%;background-position:6px 9px}
-header nav div.events div.icon{background-size:100%;background-position:6px 9px}
-header nav div.updates div.icon{background-size:52%;background-position:6px 9px}
+header nav div.logo{height:75px;width:157px;float:left;z-index:5;position:absolute;-webkit-transform:rotateY(0);background:url("/images/logo.png") 0 0 no-repeat}
 #kiosk{-webkit-transition:all .5s ease-in-out;text-align:center;overflow:hidden;}
 #kiosk .slide{height:100%;max-height:80%;width:100%;display:block;float:left;margin-top:130px;}
 #kiosk .slide .content{width:80%;height:80%;margin:0 auto;}

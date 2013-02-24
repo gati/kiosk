@@ -29,10 +29,9 @@ class SlideShow
 		if @config.debug?
 	    	hash = window.location.hash.slice(1)
 	    	slideIndex = parseInt(hash) || false
-	    	console.log(slideIndex)
 		    if slideIndex
 		    	@updateNav(slideIndex)
-		    	@index = slideIndex
+		    	@index = slideIndex - 1
 		    	@translateWidth = @winWidth * @index
 		    	@slide(@translateWidth)
 		    	return
