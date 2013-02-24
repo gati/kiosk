@@ -23,8 +23,6 @@
                             <div class="box">
                                 <figure class="front"></figure>
                                 <figure class="back"></figure>
-                                <figure class="right"></figure>
-                                <figure class="left"></figure>
                                 <figure class="top"></figure>
                                 <figure class="bottom"></figure>
                               </div>
@@ -36,8 +34,6 @@
                             <div class="box">
                                 <figure class="front"></figure>
                                 <figure class="back"></figure>
-                                <figure class="right"></figure>
-                                <figure class="left"></figure>
                                 <figure class="top"></figure>
                                 <figure class="bottom"></figure>
                               </div>
@@ -49,8 +45,6 @@
                             <div class="box">
                                 <figure class="front"></figure>
                                 <figure class="back"></figure>
-                                <figure class="right"></figure>
-                                <figure class="left"></figure>
                                 <figure class="top"></figure>
                                 <figure class="bottom"></figure>
                               </div>
@@ -62,8 +56,6 @@
                             <div class="box">
                                 <figure class="front"></figure>
                                 <figure class="back"></figure>
-                                <figure class="right"></figure>
-                                <figure class="left"></figure>
                                 <figure class="top"></figure>
                                 <figure class="bottom"></figure>
                               </div>
@@ -75,8 +67,6 @@
                             <div class="box">
                                 <figure class="front"></figure>
                                 <figure class="back"></figure>
-                                <figure class="right"></figure>
-                                <figure class="left"></figure>
                                 <figure class="top"></figure>
                                 <figure class="bottom"></figure>
                               </div>
@@ -88,8 +78,6 @@
                             <div class="box">
                                 <figure class="front"></figure>
                                 <figure class="back"></figure>
-                                <figure class="right"></figure>
-                                <figure class="left"></figure>
                                 <figure class="top"></figure>
                                 <figure class="bottom"></figure>
                               </div>
@@ -101,8 +89,6 @@
                             <div class="box">
                                 <figure class="front"></figure>
                                 <figure class="back"></figure>
-                                <figure class="right"></figure>
-                                <figure class="left"></figure>
                                 <figure class="top"></figure>
                                 <figure class="bottom"></figure>
                               </div>
@@ -114,8 +100,6 @@
                             <div class="box">
                                 <figure class="front"></figure>
                                 <figure class="back"></figure>
-                                <figure class="right"></figure>
-                                <figure class="left"></figure>
                                 <figure class="top"></figure>
                                 <figure class="bottom"></figure>
                               </div>
@@ -125,7 +109,6 @@
                 </div>
             </nav>
         </header>
-        <!-- <div id="background"></div> -->
 
         <!-- This is the only element required for the kiosk -->
         <div id="kiosk" kiosk="true"></div>
@@ -139,7 +122,7 @@
         <script src="scripts/kiosk.js"></script>
 
         <!-- Templates -->
-        <script id="schedule-template" template="venue" type="text/x-handlebars-template">
+        <script id="venue-template" template="venue" type="text/x-handlebars-template">
             <div class="slide" slide-type="venue">
                 <div class="content">
                     {{#if title}}
@@ -164,7 +147,7 @@
                 </div>
             </div>
         </script>
-        <script id="updates-template" template="announcements" type="text/x-handlebars-template">
+        <script id="announcments-template" template="announcements" type="text/x-handlebars-template">
             <div class="slide" slide-type="announcements">
                 <div class="content">
                 </div>

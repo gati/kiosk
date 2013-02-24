@@ -16,7 +16,7 @@ class Kiosk extends Renderer
 			@fetchSlideData(res)
 
 	fetchSlideData : (data) =>
-
+		console.log('fetch')
 		slides = data.objects[0].presentation_screens
 		@render(data)
 		for i in [0...slides.length]

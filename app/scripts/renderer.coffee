@@ -34,7 +34,8 @@ class Renderer
 
 		#start the slideshow
 		@slideshow = new SlideShow({
-			intervalSpeed : 5000
+			intervalSpeed : 5000,
+			debug : true
 		})
 
 		@slideshow.start()

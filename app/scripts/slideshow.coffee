@@ -1,18 +1,41 @@
 class SlideShow
 	
 	constructor: (params) ->
-		@config = {}
+		
+		#default configuration
+		config = {
+			intervalSpeed : 5000,
+			debug : false
+		}
+
 		@$kiosk = $('[kiosk]')
 		@$nav = $('nav[kiosk-nav]')
 		@$navOptions = @$nav.find('.option')
+
+		#adjust z-index of options
+		len = @$navOptions.length
+		@$navOptions.each () ->
+		  $(this).css('zIndex',len)
+		  len--
+
 		@$panels = @$kiosk.find('.slide')
 		@count = @$panels.length
 		@winWidth = $(window).innerWidth()
 		@translateWidth = @winWidth
 		@index = 1
-		@config.intervalSpeed = params.intervalSpeed or 5000
+		@config = $.extend({}, @config, params)
 		
 	start : () =>
+		if @config.debug?
+	    	hash = window.location.hash.slice(1)
+	    	slideIndex = parseInt(hash) || false
+	    	console.log(slideIndex)
+		    if slideIndex
+		    	@updateNav(slideIndex)
+		    	@index = slideIndex
+		    	@translateWidth = @winWidth * @index
+		    	@slide(@translateWidth)
+		    	return
 
 		@slideshowInterval = setInterval () =>
 			if @index is @count
