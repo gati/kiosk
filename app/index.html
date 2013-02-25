@@ -10,8 +10,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="styles/main.css">
-        <script src="scripts/vendor/modernizr.min.js"></script>
-        <script src="scripts/vendor/handlebars.min.js"></script>
+
     </head>
     <body>
         <header>
@@ -96,7 +95,8 @@
                                 <figure class="bottom"></figure>
                               </div>
                           </div>
-                        <div class="title">item</div>
+                        <div class="icon trending"></div>
+                        <div class="title">Trending</div>
                     </div>
                     <div class="option updates">
                         <div class="container">
@@ -116,11 +116,9 @@
 
         <!-- This is the only element required for the kiosk -->
         <div id="kiosk" kiosk="true"></div>
-
         <script src="scripts/vendor/jquery.min.js"></script>
-        <!-- remove for production -->
-        <script src="scripts/DUMMYDATA.js"></script>
-
+        <script src="scripts/vendor/handlebars.min.js"></script>
+        <script src="scripts/vendor/jquery.masonry.js"></script>
         <script src="scripts/vendor/moment.min.js"></script>
         <script src="scripts/slideshow.js"></script>
         <script src="scripts/renderer.js"></script>
@@ -134,52 +132,11 @@
                     <div id="maps"></div>
                 </div>
             </div>
-        </script>
-        <script id="events-template" template="events" type="text/x-handlebars-template">
-            {{#events}}
-                <li class="header"><div class="tab"><div class="text">{{this.prettyTime}}</div></div></li>
-                {{#this.events}}
-                    <li class="event">{{this.name}}</li>
-                {{/this.events}}
-            {{/events}}
-        </script>
-        <script id="maps-template" template="maps" type="text/x-handlebars-template">
-            {{#venue_maps}}
-                <div class="map">
-                    <img src="{{this.image}}" />
-                </div>
-            {{/venue_maps}}
-        </script>                   
+        </script>                  
         <script id="announcments-template" template="announcements" type="text/x-handlebars-template">
             <div class="slide" slide-type="announcements">
                 <div class="content">
-                    <div class="bubble main">
-                        <div class="headline">
-                            Boom goes the dynamite! Boom goes the dynamite! Boom goes the dynamite!
-                        </div>
-                        <div class="text">
-                            lore ipsum. lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.
-                        </div>
-                        <div class="timestamp">9:25a Tuesday March 8th</div>
-                    </div>
-                    <div class="bubble">
-                        <div class="headline">
-                            Boom goes the dynamite! Boom goes the dynamite! Boom goes the dynamite!
-                        </div>
-                        <div class="text">
-                            lore ipsum. lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.
-                        </div>
-                        <div class="timestamp">9:25a Tuesday March 8th</div>
-                    </div>
-                    <div class="bubble">
-                        <div class="headline">
-                            Boom goes the dynamite! Boom goes the dynamite! Boom goes the dynamite!
-                        </div>
-                        <div class="text">
-                            lore ipsum. lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.lore ipsum.
-                        </div>
-                        <div class="timestamp">9:25a Tuesday March 8th</div>
-                    </div>
+                    <div id="announcement-bubbles"></div>
                 </div>
             </div>
         </script>
@@ -197,7 +154,40 @@
                 </div>
             </div>
         </script>
-
+        <!-- END TEMPLATES -->
+        <!-- SUB TEMPLATES -->
+        <script id="events-template" template="events" type="text/x-handlebars-template">
+            {{#events}}
+                <li class="header"><div class="tab"><div class="text">{{this.prettyTime}}</div></div></li>
+                {{#this.events}}
+                    <li class="event">
+                        <div class="event-name">{{this.name}}</div>
+                        <div class="room">{{this.room.name}}</div>
+                    </li>
+                {{/this.events}}
+            {{/events}}
+        </script>
+        <script id="maps-template" template="maps" type="text/x-handlebars-template">
+            {{#venue_maps}}
+                <div class="map">
+                    <img src="{{this.image}}" />
+                </div>
+            {{/venue_maps}}
+        </script> 
+        <script id="bubbles" template="bubbles" type="text/x-handlebars-template">
+            {{#objects}}
+                <div class="bubble {{#this.main}}main{{/this.main}}">
+                    <div class="headline">
+                        {{this.title}}
+                    </div>
+                    <div class="text">
+                        {{this.body}}
+                    </div>
+                    <div class="timestamp">{{this.start}}</div>
+                </div>
+            {{/objects}}
+        </script>
+        <!-- END SUB TEMPLATES -->
         <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];

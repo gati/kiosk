@@ -30,7 +30,7 @@ header
 	-webkit-perspective:600;
 
 	nav
-		width:120%;
+		width:200%;
 		// overflow:hidden;
 		margin:0 auto;
 		text-align center
@@ -99,6 +99,10 @@ header
 					background:url('/images/updates.png') 0 0 no-repeat;
 					background-size: 70%;
 					background-position: 6px -3px;
+				&.trending
+					background:url('/images/trending.png') 0 0 no-repeat;
+					background-size: 60%;
+					background-position: 6px -1px;
 		div.options
 			margin-left:150px;
 		div.title
@@ -126,7 +130,7 @@ header
 	overflow hidden
 	.slide
 		height:100%;
-		max-height:80%
+		max-height:100%
 		width:100%
 		display:block
 		float:left;
@@ -182,8 +186,10 @@ header
 			margin:5px;
 			padding:10px;
 			border-radius:5px;
+			box-shadow:10px 12px 0px rgba(246,149,97,1);
+
 			img 
-				width:80%;
+				width:100%;
 	
 	#events-list
 		width:48%;
@@ -199,11 +205,16 @@ header
 			margin-top:5px;
 		li.event 
 			color:rgba(105,61,40,1);
-			font-size:1.2em;
+			font-size:1.3em;
 			text-shadow:2px 2px 0px rgba(255,255,255,0.8);
 			padding:5px 0;
 			margin-bottom:5px;
 			text-align:right;
+			.event-name, .room
+				padding:2px 5px;
+			.room
+				font-style:italic;
+
 .container {
   width: 157px;
   height: 75px;
@@ -257,16 +268,19 @@ header
 
 
 //bubbles
-
+#announcement-bubbles
+	overflow:hidden
 .bubble
 	background:#fff;
 	color:rgba(238,99,75,1)
 	padding:30px 35px;
-	width:43%;
+	min-width:38%;
 	box-shadow:10px 12px 0px rgba(246,149,97,1);
-	margin:10px 10px 60px 10px;
+	margin:10px 15px 60px 10px;
 	position:relative;
 	float:left;
+	text-align:left;
+	max-width:20%;
 	&.drop
 		background:#fff;
 	&:before
@@ -286,8 +300,9 @@ header
 		border-width: 0 0 40px 40px;
 		border-style: solid;
 		border-color: transparent #fff
-	&.main 
-		width:93%;
+	&.main
+		width:auto;
+		max-width:100%;
 	.headline
 		font-size:3em;
 		font-family:Georgia;

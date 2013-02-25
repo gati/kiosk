@@ -43,12 +43,17 @@ class Renderer
 
 	renderSchedule : (data) =>
 		console.log('SCHEDULE', data)
-		eventsContainer = $('#events-list')
-		eventsContainer.html(@templates['events'](data))
+		container = $('#events-list')
+		container.html(@templates['events'](data))
+
 	renderMaps : (data) =>
 		console.log 'MAPS', data
-		mapContainer = $('#maps')
-		mapContainer.html(@templates['maps'](data))
+		container = $('#maps')
+		container.html(@templates['maps'](data))
+
+	renderAnnouncements : (data) =>
+		container = $('#announcement-bubbles')
+		container.html(@templates['bubbles'](data))
 
 	resizeSlides : () =>
 		#force panels to be viewport height
