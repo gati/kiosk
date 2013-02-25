@@ -36,7 +36,8 @@ header nav div.logo{height:75px;width:157px;float:left;z-index:5;position:absolu
 #kiosk #maps .map img{width:80%}
 #kiosk #events-list{width:48%;float:left;}
 #kiosk #events-list li{overflow:hidden}
-#kiosk #events-list li.header{margin-top:20px}
+#kiosk #events-list li.header{margin-top:20px;}
+#kiosk #events-list li.header .tab{margin-bottom:5px;float:right}
 #kiosk #events-list li.header:first-child{margin-top:5px}
 #kiosk #events-list li.event{color:#693d28;font-size:1.2em;text-shadow:2px 2px 0 rgba(255,255,255,0.8);padding:5px 0;margin-bottom:5px;text-align:right}
 .container{width:157px;height:75px;position:relative;top:-5px}
@@ -63,5 +64,5 @@ header nav div.logo{height:75px;width:157px;float:left;z-index:5;position:absolu
 .stripes{background-color:#ef6b32;background-image:-webkit-gradient(linear,0 0,100% 100%,color-stop(.25,rgba(255,255,255,0.2)),color-stop(.25,transparent),color-stop(.5,transparent),color-stop(.5,rgba(255,255,255,0.2)),color-stop(.75,rgba(255,255,255,0.2)),color-stop(.75,transparent),to(transparent));background-image:-webkit-linear-gradient(-45deg,rgba(255,255,255,0.2) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.2) 50%,rgba(255,255,255,0.2) 75%,transparent 75%,transparent);background-image:-moz-linear-gradient(-45deg,rgba(255,255,255,0.2) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.2) 50%,rgba(255,255,255,0.2) 75%,transparent 75%,transparent);background-image:-ms-linear-gradient(-45deg,rgba(255,255,255,0.2) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.2) 50%,rgba(255,255,255,0.2) 75%,transparent 75%,transparent);background-image:-o-linear-gradient(-45deg,rgba(255,255,255,0.2) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.2) 50%,rgba(255,255,255,0.2) 75%,transparent 75%,transparent);background-image:linear-gradient(-45deg,rgba(255,255,255,0.2) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.2) 50%,rgba(255,255,255,0.2) 75%,transparent 75%,transparent);-webkit-background-size:20px 20px}
 .vertical-stripes{background-color:#ef6b32;background-image:-webkit-gradient(linear,0 0,100% 0,color-stop(.5,rgba(255,255,255,0.2)),color-stop(.5,transparent),to(transparent));background-image:-webkit-linear-gradient(0,rgba(255,255,255,0.2) 50%,transparent 50%,transparent);background-image:-moz-linear-gradient(0,rgba(255,255,255,0.2) 50%,transparent 50%,transparent);background-image:-ms-linear-gradient(0,rgba(255,255,255,0.2) 50%,transparent 50%,transparent);background-image:-o-linear-gradient(0,rgba(255,255,255,0.2) 50%,transparent 50%,transparent);background-image:linear-gradient(0,rgba(255,255,255,0.2) 50%,transparent 50%,transparent);-webkit-background-size:20px 20px}
 .arrow{-webkit-transform:rotateZ(45deg);height:50px;width:50px;position:absolute;left:-50px;top:5px;border:5px solid #fff;border-right:0;border-top:0}
-.tab{color:#fff;text-shadow:3px 3px 1px #be5429;float:right;margin:5px 0;width:200px;max-width:250px;position:relative;margin-left:50px;background:url("/images/time-arrow.png") 0 0 no-repeat;background-size:100%;}
+.tab{color:#fff;text-shadow:3px 3px 1px #be5429;width:200px;max-width:250px;position:relative;background:url("/images/time-arrow.png") 0 0 no-repeat;background-size:100%;}
 .tab .text{font-family:Georgia;padding:3px 14px 18px 34px;font-size:2.4em}
