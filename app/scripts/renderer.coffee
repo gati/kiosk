@@ -12,7 +12,8 @@ class Renderer
 			el = $(this)
 			self.templates[el.attr('template')] = Handlebars.compile(el.html())
 	
-	render : (data) =>
+	renderSlides : (data) =>
+		console.log 'TEMPLATES', @templates
 		console.log 'RAW DATA', data
 
 		@data = {}
@@ -39,6 +40,15 @@ class Renderer
 		})
 
 		@slideshow.start()
+
+	renderSchedule : (data) =>
+		console.log('SCHEDULE', data)
+		eventsContainer = $('#events-list')
+		eventsContainer.html(@templates['events'](data))
+	renderMaps : (data) =>
+		console.log 'MAPS', data
+		mapContainer = $('#maps')
+		mapContainer.html(@templates['maps'](data))
 
 	resizeSlides : () =>
 		#force panels to be viewport height

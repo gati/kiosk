@@ -5,6 +5,7 @@ body
 	overflow:hidden
 	padding:0
 	margin:0
+	background:rgba(150,202,216,1);
 ul, li
 	padding:0
 	margin:0
@@ -129,7 +130,7 @@ header
 		width:100%
 		display:block
 		float:left;
-		margin-top:130px;
+		margin-top:140px;
 		.content
 			width:80%;
 			height:80%;
@@ -143,12 +144,8 @@ header
 				width:100%;
 			h2.sub
 				font-style:italic
-			.map
-				width:100%
-				height:250px
-				overflow:hidden
-				img 
-					width:75%
+	.slide.visible
+		opacity:1
 	[slide-type="schedule"]
 		ul
 			margin-top:5px;
@@ -173,10 +170,33 @@ header
 	[slide-type="image"]
 	[slide-type="url"]
 	[slide-type="updates"]
-
-	.slide.visible
-		opacity:1
-
+	[slide-type="venue"]
+		background:rgba(150,202,216,1);
+	
+	#maps
+		float:right;
+		width:48%;
+		.map 
+			float:right;
+			background:#fff;
+			margin:5px;
+			padding:10px;
+			border-radius:5px;
+			img 
+				width:80%;
+	
+	#events-list
+		width:48%;
+		float:left;
+		li 
+			overflow:hidden
+		.event 
+			color:rgba(105,61,40,1);
+			font-size:1.2em;
+			text-shadow:2px 2px 0px rgba(255,255,255,0.8);
+			padding:5px 0;
+			margin-bottom:5px;
+			text-align:right;
 .container {
   width: 157px;
   height: 75px;
@@ -227,3 +247,109 @@ header
 .box .back   { -webkit-transform: rotateX( 180deg ) translateZ(  24px ); }
 .box .top    { background:rgba(80,83,89,1);-webkit-transform: rotateX(  90deg ) translateZ( 26px ); }
 .box .bottom { -webkit-transform: rotateX( -90deg ) translateZ( 26px ); }
+
+
+//bubbles
+
+.bubble
+	background:#fff;
+	color:rgba(238,99,75,1)
+	padding:30px 35px;
+	width:43%;
+	box-shadow:10px 12px 0px rgba(246,149,97,1);
+	margin:10px 10px 60px 10px;
+	position:relative;
+	float:left;
+	&.drop
+		background:#fff;
+	&:before
+		content: "";
+		position: absolute;
+		bottom: -45px;
+		left: 32px;
+		border-width: 0 0 40px 40px;
+		border-style: solid;
+		border-color: transparent rgba(246,149,97,1)
+
+	&:after
+		content: "";
+		position: absolute;
+		bottom: -40px;
+		left: 20px;
+		border-width: 0 0 40px 40px;
+		border-style: solid;
+		border-color: transparent #fff
+	&.main 
+		width:93%;
+	.headline
+		font-size:3em;
+		font-family:Georgia;
+		margin:10px 0;
+	.text 
+		font-family:Arial,sans;
+		color:rgba(238,98,75,1);
+		margin:20px 0;
+		font-size:1.5em;
+	.timestamp
+		text-align:right;
+		font-size:11px;
+		font-style:italic;
+		margin:10px 0;
+.stripes
+	background-color: rgba(239,107,50,1);
+	background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, rgba(255, 255, 255, .2)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .2)), color-stop(.75, rgba(255, 255, 255, .2)), color-stop(.75, transparent), to(transparent));
+	background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+	background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+	background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+	background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+	background-image: linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+	-webkit-background-size: 20px 20px;
+
+.vertical-stripes
+	background-color: rgba(239,107,50,1);
+	background-image: -webkit-gradient(linear, 0 0, 100% 0, color-stop(.5, rgba(255, 255, 255, .2)), color-stop(.5, transparent), to(transparent));
+	background-image: -webkit-linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
+	background-image: -moz-linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
+	background-image: -ms-linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
+	background-image: -o-linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
+	background-image: linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
+	-webkit-background-size: 20px 20px;
+
+.arrow
+	-webkit-transform: rotateZ(45deg);
+	height: 50px;
+	width: 50px;
+	position:absolute;
+	left:-50px;
+	top:5px
+	border:5px solid #fff;
+	border-right:0;
+	border-top:0;
+
+
+//tab
+.tab
+	color:#fff;
+	text-shadow:3px 3px 1px rgba(190,84,41,1);
+	float:right;
+	margin:5px 0;
+	width:200px;
+	max-width:250px;
+	position:relative;
+	margin-left:50px;
+	background:url('/images/time-arrow.png') 0 0 no-repeat;
+	background-size:100%;
+
+	.text 
+		font-family: Georgia;
+		padding: 3px 14px 18px 34px;
+		font-size: 2.4em;
+
+	// &:before, &:after
+	// 	content:'';
+	//     position:absolute;
+	//     top:-1px;
+	//     width:0;
+	//     height:0;
+	//     left:-32px;
+	//     border: 17px solid transparent;

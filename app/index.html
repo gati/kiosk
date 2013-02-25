@@ -121,6 +121,7 @@
         <!-- remove for production -->
         <script src="scripts/DUMMYDATA.js"></script>
 
+        <script src="scripts/vendor/moment.min.js"></script>
         <script src="scripts/slideshow.js"></script>
         <script src="scripts/renderer.js"></script>
         <script src="scripts/kiosk.js"></script>
@@ -129,28 +130,26 @@
         <script id="venue-template" template="venue" type="text/x-handlebars-template">
             <div class="slide" slide-type="venue">
                 <div class="content">
-                    {{#if title}}
-                        <h1>{{title}}</h1>
-                        // <h2 class="sub">{{venue.street_address}}</h2>
-                    {{/if}}
-                    // <div class="map"><img src="{{venue.map}}" /></div>
-                    // {{#if schedule}}
-                    //     <ul>
-                    //         {{#each schedule}}
-                    //             <li class="header"><h1>{{this._key}}</h1></li>
-                    //             {{#each this.events}}
-                    //                 <li>
-                    //                     <div class="event-name event-cell">{{this.name}}</div>
-                    //                     <div class="event-location event-cell">{{this.room}}</div>
-                    //                     <div class="event-time event-cell">{{this.formatted_time_to_endtime}}</div>
-                    //                 </li>
-                    //             {{/each}}
-                    //         {{/each}}
-                    //     </ul>
-                    // {{/if}}
+                    <ul id="events-list"></ul>
+                    <div id="maps"></div>
                 </div>
             </div>
         </script>
+        <script id="events-template" template="events" type="text/x-handlebars-template">
+            {{#events}}
+                <li class="header"><div class="tab"><div class="text">{{this.prettyTime}}</div></div></li>
+                {{#this.events}}
+                    <li class="event">{{this.name}}</li>
+                {{/this.events}}
+            {{/events}}
+        </script>
+        <script id="maps-template" template="maps" type="text/x-handlebars-template">
+            {{#venue_maps}}
+                <div class="map">
+                    <img src="{{this.image}}" />
+                </div>
+            {{/venue_maps}}
+        </script>                   
         <script id="announcments-template" template="announcements" type="text/x-handlebars-template">
             <div class="slide" slide-type="announcements">
                 <div class="content">

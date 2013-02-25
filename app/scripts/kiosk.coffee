@@ -5,27 +5,59 @@
 class Kiosk extends Renderer
 	
 	constructor : () ->
+		@baseURI = 'http://vast-ocean-9515.herokuapp.com/festivals/api/v1'
+		@venueID = 1
 		super()
 
 	init : () =>
 		@fetchKioskSlides()
 
 	fetchKioskSlides : () =>
-		url = 'http://vast-ocean-9515.herokuapp.com/festivals/api/v1/presentation/?venue=1&format=jsonp&callback=?'
+		url = "#{@baseURI}/presentation/?venue=#{@venueID}&format=jsonp&callback=?"
 		$.getJSON url, (res) =>
-			@fetchSlideData(res)
+			@renderSlides(res)
+			@fetchScheduleData()
+			@fetchMapData()
 
-	fetchSlideData : (data) =>
-		console.log('fetch')
-		slides = data.objects[0].presentation_screens
-		@render(data)
-		for i in [0...slides.length]
-			slide = slides[i].screen
-			# switch slide.slide_type
-			# 	when 'announcements'
+	fetchScheduleData : () =>
+		scheduleUrl = "#{@baseURI}/scheduled-event/?venue=#{@venueID}&start__gte=2013-03-10T12:00:00&start__lte=2013-03-10T14:00:00&format=jsonp&callback=?"
+		# fetch schedule
+		schedule = {}
+		schedule.events = []
+		group = {}
+		$.getJSON scheduleUrl, (data) =>
+			events = data.objects
+			for i in [0...events.length]
+				event = events[i]
+				t = moment(event.start)
+				format = t.format('h:mma')
+				hr = t.hours()
+
+				if not group[format]
+					group[format] = []
+
+				event.key = hr
+				group[format].push(event)
+
+			for j of group
+				schedule.events.push({
+					prettyTime : j,
+					events : group[j]
+				})
+
+			@renderSchedule(schedule)
+		, (err) =>
+			console.log err
+
+	fetchMapData : () =>
+		mapsUrl = "#{@baseURI}/venue/#{@venueID}/?format=jsonp&callback=?"
+		#fetch maps
+		$.getJSON mapsUrl, (data) =>
+			@renderMaps(data)
+
+	fetchAnnouncementsData : () =>
 
 
-		
 $(document).ready ->
 	window.Kiosk = new Kiosk()
 	window.Kiosk.init()

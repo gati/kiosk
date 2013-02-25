@@ -1,5 +1,5 @@
 *{font-family:'Helvetica-Neue-Ultralite',Helvetica;font-weight:300}
-body{overflow:hidden;padding:0;margin:0}
+body{overflow:hidden;padding:0;margin:0;background:#96cad8}
 ul,li{padding:0;margin:0;list-style:none}
 #background{width:100%;right:0;position:absolute;top:0;background:#a6c0d7;height:100%}
 header{color:#fff;position:fixed;top:0;width:100%;z-index:1;text-align:center;margin:15px 0;-webkit-perspective:600;}
@@ -19,19 +19,24 @@ header nav div.options{margin-left:150px}
 header nav div.title{color:#505359;position:absolute;z-index:5;font-size:2.2em;font-family:Georgia;font-style:italic;text-align:center;width:100%;-webkit-transition:all .5s ease-in-out}
 header nav div.logo{height:75px;width:157px;float:left;z-index:5;position:absolute;-webkit-transform:rotateY(0);background:url("/images/logo.png") 0 0 no-repeat}
 #kiosk{-webkit-transition:all .5s ease-in-out;text-align:center;overflow:hidden;}
-#kiosk .slide{height:100%;max-height:80%;width:100%;display:block;float:left;margin-top:130px;}
+#kiosk .slide{height:100%;max-height:80%;width:100%;display:block;float:left;margin-top:140px;}
 #kiosk .slide .content{width:80%;height:80%;margin:0 auto;}
 #kiosk .slide .content iframe{width:100%;height:100%;margin:0 auto}
 #kiosk .slide .content .image{height:100%;width:100%}
 #kiosk .slide .content h2.sub{font-style:italic}
-#kiosk .slide .content .map{width:100%;height:250px;overflow:hidden;}
-#kiosk .slide .content .map img{width:75%}
+#kiosk .slide.visible{opacity:1}
 #kiosk [slide-type="schedule"] ul{margin-top:5px;}
 #kiosk [slide-type="schedule"] ul li{border-bottom:1px solid #333;padding:10px 0;overflow:hidden;}
 #kiosk [slide-type="schedule"] ul li .event-cell{padding:5px 15px 5px 5px;max-width:33%;float:left;text-align:left}
 #kiosk [slide-type="schedule"] ul li .event-name{font-size:1.2em;font-style:italic;max-width:40%;word-wrap:break-word}
 #kiosk [slide-type="schedule"] ul li.header{background:#ccc;text-align:center}
-#kiosk [slide-type="image"],#kiosk [slide-type="url"],#kiosk [slide-type="updates"],#kiosk .slide.visible{opacity:1}
+#kiosk [slide-type="image"],#kiosk [slide-type="url"],#kiosk [slide-type="updates"],#kiosk [slide-type="venue"]{background:#96cad8}
+#kiosk #maps{float:right;width:48%;}
+#kiosk #maps .map{float:right;background:#fff;margin:5px;padding:10px;border-radius:5px;}
+#kiosk #maps .map img{width:80%}
+#kiosk #events-list{width:48%;float:left;}
+#kiosk #events-list li{overflow:hidden}
+#kiosk #events-list .event{color:#693d28;font-size:1.2em;text-shadow:2px 2px 0 rgba(255,255,255,0.8);padding:5px 0;margin-bottom:5px;text-align:right}
 .container{width:157px;height:75px;position:relative;top:-5px}
 .box{width:100%;height:100%;position:absolute;z-index:1;-webkit-transform-style:preserve-3d;-webkit-transform:rotateY(23deg) rotateX(-46deg);-webkit-transition:all .5s ease-in-out;left:-44px}
 .option.selected .title{color:#c05139;text-shadow:0 0 1px #000}
@@ -45,3 +50,16 @@ header nav div.logo{height:75px;width:157px;float:left;z-index:5;position:absolu
 .box .back{-webkit-transform:rotateX(180deg) translateZ(24px)}
 .box .top{background:#505359;-webkit-transform:rotateX(90deg) translateZ(26px)}
 .box .bottom{-webkit-transform:rotateX(-90deg) translateZ(26px)}
+.bubble{background:#fff;color:#ee634b;padding:30px 35px;width:43%;box-shadow:10px 12px 0 #f69561;margin:10px 10px 60px 10px;position:relative;float:left;}
+.bubble.drop{background:#fff}
+.bubble:before{content:"";position:absolute;bottom:-45px;left:32px;border-width:0 0 40px 40px;border-style:solid;border-color:transparent #f69561}
+.bubble:after{content:"";position:absolute;bottom:-40px;left:20px;border-width:0 0 40px 40px;border-style:solid;border-color:transparent #fff}
+.bubble.main{width:93%}
+.bubble .headline{font-size:3em;font-family:Georgia;margin:10px 0}
+.bubble .text{font-family:Arial,sans;color:#ee624b;margin:20px 0;font-size:1.5em}
+.bubble .timestamp{text-align:right;font-size:11px;font-style:italic;margin:10px 0}
+.stripes{background-color:#ef6b32;background-image:-webkit-gradient(linear,0 0,100% 100%,color-stop(.25,rgba(255,255,255,0.2)),color-stop(.25,transparent),color-stop(.5,transparent),color-stop(.5,rgba(255,255,255,0.2)),color-stop(.75,rgba(255,255,255,0.2)),color-stop(.75,transparent),to(transparent));background-image:-webkit-linear-gradient(-45deg,rgba(255,255,255,0.2) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.2) 50%,rgba(255,255,255,0.2) 75%,transparent 75%,transparent);background-image:-moz-linear-gradient(-45deg,rgba(255,255,255,0.2) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.2) 50%,rgba(255,255,255,0.2) 75%,transparent 75%,transparent);background-image:-ms-linear-gradient(-45deg,rgba(255,255,255,0.2) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.2) 50%,rgba(255,255,255,0.2) 75%,transparent 75%,transparent);background-image:-o-linear-gradient(-45deg,rgba(255,255,255,0.2) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.2) 50%,rgba(255,255,255,0.2) 75%,transparent 75%,transparent);background-image:linear-gradient(-45deg,rgba(255,255,255,0.2) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.2) 50%,rgba(255,255,255,0.2) 75%,transparent 75%,transparent);-webkit-background-size:20px 20px}
+.vertical-stripes{background-color:#ef6b32;background-image:-webkit-gradient(linear,0 0,100% 0,color-stop(.5,rgba(255,255,255,0.2)),color-stop(.5,transparent),to(transparent));background-image:-webkit-linear-gradient(0,rgba(255,255,255,0.2) 50%,transparent 50%,transparent);background-image:-moz-linear-gradient(0,rgba(255,255,255,0.2) 50%,transparent 50%,transparent);background-image:-ms-linear-gradient(0,rgba(255,255,255,0.2) 50%,transparent 50%,transparent);background-image:-o-linear-gradient(0,rgba(255,255,255,0.2) 50%,transparent 50%,transparent);background-image:linear-gradient(0,rgba(255,255,255,0.2) 50%,transparent 50%,transparent);-webkit-background-size:20px 20px}
+.arrow{-webkit-transform:rotateZ(45deg);height:50px;width:50px;position:absolute;left:-50px;top:5px;border:5px solid #fff;border-right:0;border-top:0}
+.tab{color:#fff;text-shadow:3px 3px 1px #be5429;float:right;margin:5px 0;width:200px;max-width:250px;position:relative;margin-left:50px;background:url("/images/time-arrow.png") 0 0 no-repeat;background-size:100%;}
+.tab .text{font-family:Georgia;padding:3px 14px 18px 34px;font-size:2.4em}
