@@ -5,12 +5,15 @@
 class Kiosk extends Renderer
 	
 	constructor : () ->
-		@baseURI = 'http://vast-ocean-9515.herokuapp.com/festivals/api/v1'
-		@venueID = 1
 		super()
-
+		@baseURI = 'http://vast-ocean-9515.herokuapp.com/festivals/api/v1'
+		@venueID = @getURLParameter('venue')
+		
 	init : () =>
 		@fetchKioskSlides()
+	
+	getURLParameter : (name) =>
+		return decodeURIComponent( (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[null,""])[1] )
 
 	fetchKioskSlides : () =>
 		url = "#{@baseURI}/presentation/?venue=#{@venueID}&format=jsonp&callback=?"

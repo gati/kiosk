@@ -31,7 +31,7 @@ header nav div.logo{height:75px;width:157px;float:left;z-index:5;position:absolu
 #kiosk [slide-type="schedule"] ul li .event-name{font-size:1.2em;font-style:italic;max-width:40%;word-wrap:break-word}
 #kiosk [slide-type="schedule"] ul li.header{background:#ccc;text-align:center}
 #kiosk [slide-type="image"],#kiosk [slide-type="url"],#kiosk [slide-type="updates"],#kiosk [slide-type="venue"]{background:#96cad8}
-#kiosk #maps{float:right;width:48%;}
+#kiosk #maps{float:right;width:50%;}
 #kiosk #maps .map{float:right;background:#fff;margin:5px;padding:10px;border-radius:5px;}
 #kiosk #maps .map img{width:80%}
 #kiosk #events-list{width:48%;float:left;}
