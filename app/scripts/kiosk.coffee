@@ -32,7 +32,7 @@ class Kiosk extends Renderer
 			@setRefreshIntervals()
 		, (err) =>
 			# try again
-			window.location.reload(true)
+			@fetchKioskSlides()
 
 	fetchScheduleData : () =>
 		
