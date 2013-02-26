@@ -40,7 +40,7 @@ header nav div.logo{height:75px;width:157px;float:left;z-index:5;position:absolu
 #kiosk #events-list li.header{margin-top:20px;}
 #kiosk #events-list li.header .tab{margin-bottom:5px;float:right}
 #kiosk #events-list li.header:first-child{margin-top:5px}
-#kiosk #events-list li.event{color:#693d28;font-size:1.3em;text-shadow:2px 2px 0 rgba(255,255,255,0.8);padding:5px 0;margin-bottom:5px;text-align:right;}
+#kiosk #events-list li.event{color:#693d28;font-size:1.3em;text-shadow:2px 2px 0 #bbe7f6;padding:5px 0;margin-bottom:5px;text-align:right;}
 #kiosk #events-list li.event .event-name,#kiosk #events-list li.event .room{padding:2px 5px}
 #kiosk #events-list li.event .room{font-style:italic}
 .container{width:157px;height:75px;position:relative;top:-5px}
