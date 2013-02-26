@@ -10,12 +10,12 @@ header nav div.option div.top{background-color:#505359;height:47%;width:100%;top
 header nav div.option div.bottom{background-color:#313a41;height:47%;width:100%;z-index:1;-webkit-transform:skew(-20deg)}
 header nav div.option div.top{background-color:#505359;height:47%;width:100%;top:none;z-index:1;-webkit-transform:skew(20deg)}
 header nav div.option div.bottom{background-color:#313a41;height:47%;width:100%;z-index:1;-webkit-transform:skew(-20deg)}
-header nav div.option div.icon{position:absolute;top:0;height:100%;width:50%;z-index:2;left:31%;}
-header nav div.option div.icon.shuttle{background:url("/images/shuttle.png") 0 0 no-repeat;background-size:70%;background-position:6px 3px}
-header nav div.option div.icon.venue{background:url("/images/venue.png") 0 0 no-repeat;background-size:50%;background-position:6px 7px}
-header nav div.option div.icon.social{background:url("/images/social.png") 0 0 no-repeat;background-size:70%;background-position:6px -3px}
-header nav div.option div.icon.updates{background:url("/images/updates.png") 0 0 no-repeat;background-size:70%;background-position:6px -3px}
-header nav div.option div.icon.trending{background:url("/images/trending.png") 0 0 no-repeat;background-size:60%;background-position:6px -1px}
+header nav div.option div.icon{position:absolute;top:-5px;height:100%;width:50%;z-index:2;left:31%;background-size:70%;background-position-x:6px;background-position-y:0;}
+header nav div.option div.icon.shuttle{background:url("/images/shuttle.png") 0 0 no-repeat;background-size:100%}
+header nav div.option div.icon.venue{background:url("/images/venue.png") 0 0 no-repeat}
+header nav div.option div.icon.social{background:url("/images/social.png") 0 0 no-repeat;background-size:100%;background-position-y:-11px}
+header nav div.option div.icon.updates{background:url("/images/updates.png") 0 0 no-repeat;background-position-y:5px}
+header nav div.option div.icon.trending{background:url("/images/trending.png") 0 0 no-repeat}
 header nav div.options{margin-left:150px}
 header nav div.title{color:#505359;position:absolute;z-index:5;font-size:2.2em;font-family:Georgia;font-style:italic;text-align:center;width:100%;-webkit-transition:all .5s ease-in-out}
 header nav div.logo{height:75px;width:157px;float:left;z-index:5;position:absolute;-webkit-transform:rotateY(0);background:url("/images/logo.png") 0 0 no-repeat}
@@ -45,10 +45,12 @@ header nav div.logo{height:75px;width:157px;float:left;z-index:5;position:absolu
 #kiosk #events-list li.event .room{font-style:italic}
 .container{width:157px;height:75px;position:relative;top:-5px}
 .box{width:100%;height:100%;position:absolute;z-index:1;-webkit-transform-style:preserve-3d;-webkit-transform:rotateY(23deg) rotateX(-46deg);-webkit-transition:all .5s ease-in-out;left:-44px}
+.option .icon{-webkit-transform-style:preserve-3d;-webkit-transform:rotateY(23deg) rotateX(-46deg);-webkit-transition:all .5s ease-in-out}
 .option.selected .title{color:#c05139;text-shadow:0 0 1px #000}
 .option.selected .box{-webkit-transform:rotateY(23deg) rotateX(317deg);}
 .option.selected .box .top{background:#f69460}
 .option.selected .box .front{background:#5d220a}
+.option.selected .icon{-webkit-transform:rotateY(23deg) rotateX(317deg)}
 .box figure{display:block;position:absolute}
 .box .front,.box .back{width:157px;height:50px}
 .box .top,.box .bottom{width:157px;height:50px}

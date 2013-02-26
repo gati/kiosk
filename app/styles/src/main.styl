@@ -78,31 +78,28 @@ header
 				-webkit-transform: skew(-20deg);
 			div.icon
 				position:absolute;
-				top:0;
+				top:-5px;
 				height:100%;
 				width:50%;
 				z-index:2;
-				left:31%
+				left:31%;
+				background-size: 70%;
+				background-position-x:6px;
+				background-position-y: 0;
 				&.shuttle
 					background:url('/images/shuttle.png') 0 0 no-repeat;
-					background-size: 70%;
-					background-position: 6px 3px;
+					background-size: 100%;
 				&.venue
 					background:url('/images/venue.png') 0 0 no-repeat;
-					background-size: 50%;
-					background-position: 6px 7px;
 				&.social
 					background:url('/images/social.png') 0 0 no-repeat;
-					background-size: 70%;
-					background-position: 6px -3px;
+					background-size: 100%;
+					background-position-y: -11px;
 				&.updates
 					background:url('/images/updates.png') 0 0 no-repeat;
-					background-size: 70%;
-					background-position: 6px -3px;
+					background-position-y: 5px;
 				&.trending
 					background:url('/images/trending.png') 0 0 no-repeat;
-					background-size: 60%;
-					background-position: 6px -1px;
 		div.options
 			margin-left:150px;
 		div.title
@@ -232,7 +229,12 @@ header
   left:-44px
 }
 .option
+	.icon
+		-webkit-transform-style: preserve-3d;
+		-webkit-transform: rotateY(23deg) rotateX(-46deg);
+		-webkit-transition:all 0.5s ease-in-out
 	&.selected
+
 		.title
 			color:rgba(192,81,57,1)
 			text-shadow:0 0 1px #000
@@ -242,6 +244,9 @@ header
 				background:rgba(246,148,96,1)
 			.front
 				background:rgba(93,34,10,1)
+		.icon 
+			-webkit-transform: rotateY(23deg) rotateX(317deg);
+
 
 .box figure {
   display: block;

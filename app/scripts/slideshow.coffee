@@ -56,8 +56,8 @@ class SlideShow
 
 	updateNav : (index) =>
 		@$navOptions.removeClass('selected')
-		@$navOptions.removeClass('flip')
+		@$navOptions.find('.icon').removeClass('selected')
 		current = @$navOptions.eq(index-1)
-		current.addClass('flip').addClass('selected')
+		current.addClass('selected')
 
 window.SlideShow = SlideShow
