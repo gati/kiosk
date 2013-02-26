@@ -78,28 +78,36 @@ header
 				-webkit-transform: skew(-20deg);
 			div.icon
 				position:absolute;
-				top:-5px;
+				top:0px;
 				height:100%;
 				width:50%;
 				z-index:2;
 				left:31%;
 				background-size: 70%;
 				background-position-x:6px;
-				background-position-y: 0;
+				background-position-y: 0px;
+				-webkit-transform-style: preserve-3d;
+				-webkit-transform: rotateY(23deg) rotateX(-46deg);
+				-webkit-transition:all 0.5s ease-in-out
 				&.shuttle
 					background:url('/images/shuttle.png') 0 0 no-repeat;
 					background-size: 100%;
+					top:-5px;
 				&.venue
 					background:url('/images/venue.png') 0 0 no-repeat;
+					top:-3px;
 				&.social
 					background:url('/images/social.png') 0 0 no-repeat;
 					background-size: 100%;
-					background-position-y: -11px;
+					top:-13px;
 				&.updates
 					background:url('/images/updates.png') 0 0 no-repeat;
-					background-position-y: 5px;
+					background-size:90%;
+					background-position-y: -8px;
+					top:-5px;
 				&.trending
 					background:url('/images/trending.png') 0 0 no-repeat;
+					top:-3px;
 		div.options
 			margin-left:150px;
 		div.title
@@ -118,7 +126,7 @@ header
 			float:left;
 			z-index:5;
 			position:absolute;
-			-webkit-transform:rotateY(0)
+			-webkit-transform:rotateY(0);
 			background:url('/images/logo.png') 0 0 no-repeat;
 			
 #kiosk
@@ -229,23 +237,18 @@ header
   left:-44px
 }
 .option
-	.icon
-		-webkit-transform-style: preserve-3d;
-		-webkit-transform: rotateY(23deg) rotateX(-46deg);
-		-webkit-transition:all 0.5s ease-in-out
 	&.selected
-
 		.title
 			color:rgba(192,81,57,1)
 			text-shadow:0 0 1px #000
 		.box
-			-webkit-transform: rotateY(23deg) rotateX(317deg);
+			-webkit-transform: rotateY(23deg) rotateX(-408deg);
 			.top
 				background:rgba(246,148,96,1)
 			.front
 				background:rgba(93,34,10,1)
 		.icon 
-			-webkit-transform: rotateY(23deg) rotateX(317deg);
+			-webkit-transform: rotateY(23deg) rotateX(-408deg);
 
 
 .box figure {
@@ -305,17 +308,18 @@ header
 		border-style: solid;
 		border-color: transparent #fff
 	&.main
-		width:auto;
+		width:90%;
 		max-width:100%;
 	.headline
-		font-size:3em;
+		font-size:2.5em;
 		font-family:Georgia;
 		margin:10px 0;
 	.text 
 		font-family:Arial,sans;
 		color:rgba(238,98,75,1);
 		margin:20px 0;
-		font-size:1.5em;
+		font-size:1.2em;
+		line-height:1.2em;
 	.timestamp
 		text-align:right;
 		font-size:11px;

@@ -9,12 +9,14 @@ class Kiosk extends Renderer
 		@baseURI = 'http://vast-ocean-9515.herokuapp.com/festivals/api/v1'
 		@venueID = @getURLParameter('venue')
 		config = {
-			debug : false
+			debug : false,
+			scheduleRefreshInterval : 1800000, # 30 minutes
+			updatesRefreshInterval : 300000 # 5 minutes 
 		}
 
 		@config = $.extend({}, config, params)
 		
-	init : () =>
+	start : () =>
 		@fetchKioskSlides()
 	
 	getURLParameter : (name) =>
@@ -27,6 +29,10 @@ class Kiosk extends Renderer
 			@fetchScheduleData()
 			@fetchMapData()
 			@fetchAnnouncementsData()
+			@setRefreshIntervals()
+		, (err) =>
+			# try again
+			window.location.reload(true)
 
 	fetchScheduleData : () =>
 		
@@ -49,22 +55,24 @@ class Kiosk extends Renderer
 				hr = start.hours()
 
 				event.end = end
+				event.key = start.unix()
 
 				if not group[format]
 					group[format] = []
 
 				group[format].push(event)
-
+				
 			for j of group
 				schedule.events.push({
 					prettyTime : j,
-					key : group[j][0].start
+					key : group[j][0].key
 					events : group[j]
 				})
-			
+
 			# sort by start time
 			schedule.events = _(schedule.events).sortBy (event) =>
 				return event.key
+
 			console.log('SCHEDULE!!!',schedule)
 			@renderSchedule(schedule)
 		, (err) =>
@@ -78,6 +86,7 @@ class Kiosk extends Renderer
 
 	fetchAnnouncementsData : () =>
 		url = "#{@baseURI}/announcement/?room__venue=#{@venueID}&format=jsonp&callback=?"
+		
 		#fetch announcements
 		$.getJSON url, (data) =>
 			console.log('ANNOUNCEMENTS', data)
@@ -88,17 +97,40 @@ class Kiosk extends Renderer
 			for i in [0..data.objects.length-1]
 				object = data.objects[i]
 				if object.status is 'published'
-					if not firstPublished
-						object.main = true
 					formatted = moment(object.start).format('h:mma dddd MMMM D')
+					object.key = moment(object.start).unix()
 					object.start = formatted
 					filteredData.objects.push(object)
-					firstPublished = true
-			console.log 'FILTERED', filteredData
+			
+			# sort by start time
+			filteredData.objects = _(filteredData.objects).sortBy (event) =>
+				return event.key
+
+			filteredData.objects.reverse()
+
+			# set the first announcement's display to a bigger bubble
+			filteredData.objects[0].main = true
 			@renderAnnouncements(filteredData)
+
+	setRefreshIntervals : () =>
+		@setScheduleInterval()
+		@setUpdatesInterval()
+
+	setScheduleInterval : () =>
+		setInterval () =>
+			#refresh the schedule
+			@fetchScheduleData()
+		, @config.scheduleRefreshInterval
+
+	setUpdatesInterval : () =>
+		setInterval () =>
+			#refresh the updates
+			@fetchAnnouncementsData()
+		, @config.updatesRefreshInterval
 
 $(document).ready ->
 	window.Kiosk = new Kiosk({
 		debug : true
 	})
-	window.Kiosk.init()
+
+	window.Kiosk.start()
