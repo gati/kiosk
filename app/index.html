@@ -10,7 +10,6 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="styles/main.css">
-
     </head>
     <body>
         <header>
@@ -118,7 +117,7 @@
         <div id="kiosk" kiosk="true"></div>
         <script src="scripts/vendor/jquery.min.js"></script>
         <script src="scripts/vendor/handlebars.min.js"></script>
-        <script src="scripts/vendor/jquery.masonry.js"></script>
+        <script src="scripts/vendor/underscore.min.js"></script>
         <script src="scripts/vendor/moment.min.js"></script>
         <script src="scripts/slideshow.js"></script>
         <script src="scripts/renderer.js"></script>
@@ -162,7 +161,7 @@
                 {{#this.events}}
                     <li class="event">
                         <div class="event-name">{{this.name}}</div>
-                        <div class="room">{{this.room.name}}</div>
+                        <div class="room">{{this.room.name}} - ends @ {{this.end}}</div>
                     </li>
                 {{/this.events}}
             {{/events}}

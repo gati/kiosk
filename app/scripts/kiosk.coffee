@@ -29,35 +29,43 @@ class Kiosk extends Renderer
 			@fetchAnnouncementsData()
 
 	fetchScheduleData : () =>
-		console.log(@venueID)
+		
 		range = moment()
 		start = if @config.debug then '2013-03-10T14:00:00' else range.format('YYYY-MM-DDTHH:mm:ss')
-		end = if @config.debug then '2013-03-10T12:00:00' else range.add('hours', 4).format('YYYY-MM-DDTHH:mm:ss')
+		end = if @config.debug then '2013-03-10T09:00:00' else range.add('hours', 4).format('YYYY-MM-DDTHH:mm:ss')
 		url = "#{@baseURI}/scheduled-event/?room__venue=#{@venueID}&start__gte="+end+"&start__lte="+start+"&format=jsonp&callback=?"
 		# fetch schedule
 		schedule = {}
 		schedule.events = []
 		group = {}
 		$.getJSON url, (data) =>
+			console.log('RAW SCHEDULE', data)
 			events = data.objects
 			for i in [0...events.length]
 				event = events[i]
-				t = moment(event.start)
-				format = t.format('h:mma')
-				hr = t.hours()
+				start = moment(event.start)
+				end = moment(event.end).format('h:mma')
+				format = start.format('h:mma')
+				hr = start.hours()
+
+				event.end = end
 
 				if not group[format]
 					group[format] = []
 
-				event.key = hr
 				group[format].push(event)
 
 			for j of group
 				schedule.events.push({
 					prettyTime : j,
+					key : group[j][0].start
 					events : group[j]
 				})
-
+			
+			# sort by start time
+			schedule.events = _(schedule.events).sortBy (event) =>
+				return event.key
+			console.log('SCHEDULE!!!',schedule)
 			@renderSchedule(schedule)
 		, (err) =>
 			console.log err
