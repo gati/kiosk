@@ -2,21 +2,21 @@
 body{overflow:hidden;padding:0;margin:0;background:#96cad8}
 ul,li{padding:0;margin:0;list-style:none}
 #background{width:100%;right:0;position:absolute;top:0;background:#a6c0d7;height:100%}
-header{color:#fff;position:fixed;top:0;width:100%;z-index:1;text-align:center;margin:25px 0 0 15%;-webkit-perspective:900;-webkit-transform:scale(1.4);}
+header{color:#fff;position:fixed;top:0;width:100%;z-index:1;text-align:center;margin:25px 0 0 15%;-webkit-perspective:700;-webkit-transform:scale(1.4);}
 header nav{width:200%;margin:20px auto;text-align:center;-webkit-transform:rotateY(40deg);-webkit-transform-origin:0 0;}
 header nav div.option{width:150px;float:left;position:relative;top:4px;z-index:4;-webkit-transition:all .2s ease-in-out;}
-header nav div.option .top{background-position:50% -34%;background-size:32%}
+header nav div.option .top{background-position:50% -35%;background-size:32%}
 header nav div.option .front{background-position:50% 119%;background-size:32%}
 header nav div.option .venue{background-image:url("/images/venue.png");background-repeat:no-repeat}
 header nav div.option .shuttle{background-image:url("/images/shuttle.png");background-repeat:no-repeat;}
-header nav div.option .shuttle.top{background-position:50% 14%;background-size:42%}
+header nav div.option .shuttle.top{background-position:50% 13%;background-size:42%}
 header nav div.option .shuttle.front{background-position:50% 103%;background-size:42%}
 header nav div.option .social{background-image:url("/images/social.png");background-repeat:no-repeat;}
 header nav div.option .social.top{background-position:50% 12%;background-size:42%}
-header nav div.option .social.front{background-position:50% 123%;background-size:42%}
-header nav div.option .updates{background-image:url("/images/updates.png");background-repeat:no-repeat;}
-header nav div.option .updates.top{background-position:50% -43%}
-header nav div.option .updates.front{background-position:50% 109%}
+header nav div.option .social.front{background-position:50% 127%;background-size:42%}
+header nav div.option .updates{background-image:url("/images/updates.png");background-repeat:no-repeat;background-size:45%;}
+header nav div.option .updates.top{background-position:50% 1%}
+header nav div.option .updates.front{background-position:50% 76%}
 header nav div.option .trending{background-image:url("/images/trending.png");background-repeat:no-repeat;}
 header nav div.option .trending.top{background-position:50% -36%}
 header nav div.option .trending.front{background-position:50% 117%}
