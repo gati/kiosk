@@ -2,8 +2,8 @@
 body{overflow:hidden;padding:0;margin:0;background:#96cad8}
 ul,li{padding:0;margin:0;list-style:none}
 #background{width:100%;right:0;position:absolute;top:0;background:#a6c0d7;height:100%}
-header{color:#fff;position:fixed;top:0;width:100%;z-index:1;text-align:center;margin:15px 0;-webkit-perspective:700;}
-header nav{width:200%;margin:0 auto;text-align:center;margin-left:10%;-webkit-transform:rotateY(40deg);-webkit-transform-origin:0 0;}
+header{color:#fff;position:fixed;top:0;width:100%;z-index:1;text-align:center;margin:25px 0 0 15%;-webkit-perspective:900;-webkit-transform:scale(1.4);}
+header nav{width:200%;margin:20px auto;text-align:center;-webkit-transform:rotateY(40deg);-webkit-transform-origin:0 0;}
 header nav div.option{width:150px;float:left;position:relative;top:4px;z-index:4;-webkit-transition:all .2s ease-in-out;}
 header nav div.option .top{background-position:50% -34%;background-size:32%}
 header nav div.option .front{background-position:50% 119%;background-size:32%}
@@ -33,7 +33,7 @@ header nav .logo{background:url("/images/logo.png") 0 0 no-repeat;-webkit-transf
 header nav div.options{margin-left:150px}
 header nav div.title{color:#505359;position:absolute;z-index:5;font-size:2.2em;font-family:Georgia;font-style:italic;text-align:center;width:100%;-webkit-transition:all .5s ease-in-out}
 #kiosk{-webkit-transition:all .5s ease-in-out;text-align:center;overflow:hidden;}
-#kiosk .slide{height:100%;max-height:100%;width:100%;display:block;float:left;margin-top:140px;}
+#kiosk .slide{height:100%;max-height:100%;width:100%;display:block;float:left;margin-top:215px;}
 #kiosk .slide .content{width:80%;height:80%;margin:0 auto;}
 #kiosk .slide .content iframe{width:100%;height:100%;margin:0 auto}
 #kiosk .slide .content .image{width:100%}
