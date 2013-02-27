@@ -87,6 +87,9 @@ header
 				&.front
 					background-position:50% 117%;
 			&.selected
+				.box.logo
+					-webkit-transform: rotateY(1deg) rotateX(-351deg) rotateZ(0deg);
+
 				.title
 					color:rgba(192,81,57,1)
 					text-shadow:0 0 1px #000
@@ -94,10 +97,6 @@ header
 					-webkit-transform: rotateY(23deg) rotateX(-408deg);
 				.top, .front
 					background-color:rgba(246,148,96,1)
-				// .top
-				// 	background-position:50% -42%;
-				// .front
-				// 	background-position:50% 150%;
 				.venue
 					background-image:url('/images/venue-active.png');
 					background-repeat:no-repeat;
@@ -113,7 +112,15 @@ header
 				.trending
 					background-image:url('/images/trending-active.png');
 					background-repeat:no-repeat;
-					
+		.logo
+			background: url("/images/logo.png") 0 0 no-repeat;
+			-webkit-transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+			left: -18px;
+			height: 100px;
+			background-size: 95%;
+			width: 175px;
+			top: -1px;
+
 					
 		div.options
 			margin-left:150px;
@@ -127,14 +134,6 @@ header
 			text-align: center;
 			width: 100%;
 			-webkit-transition:all 0.5s ease-in-out;
-		div.logo
-			height:75px;
-			width:157px;
-			float:left;
-			z-index:10;
-			position:absolute;
-			-webkit-transform:rotateY(0);
-			background:url('/images/logo.png') 0 0 no-repeat;
 			
 #kiosk
 	-webkit-transition:all 0.5s ease-in-out
