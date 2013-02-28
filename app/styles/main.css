@@ -20,6 +20,9 @@ header nav div.option .updates.front{background-position:50% 84%}
 header nav div.option .trending{background-image:url("/images/trending.png");background-repeat:no-repeat;}
 header nav div.option .trending.top{background-position:50% -36%}
 header nav div.option .trending.front{background-position:50% 117%}
+header nav div.option .map{background-image:url("/images/map.png");background-repeat:no-repeat;background-size:45%;}
+header nav div.option .map.top{background-position:50% -32%}
+header nav div.option .map.front{background-position:50% 132%}
 header nav div.option .info{background-image:url("/images/info.png");background-repeat:no-repeat;background-size:45%;}
 header nav div.option .info.top{background-position:50% -5%}
 header nav div.option .info.front{background-position:50% 117%}
@@ -34,6 +37,7 @@ header nav div.option.selected .social{background-image:url("/images/social-acti
 header nav div.option.selected .updates{background-image:url("/images/updates-active.png");background-repeat:no-repeat}
 header nav div.option.selected .trending{background-image:url("/images/trending-active.png");background-repeat:no-repeat}
 header nav div.option.selected .info{background-image:url("/images/info-active.png");background-repeat:no-repeat}
+header nav div.option.selected .map{background-image:url("/images/map-active.png");background-repeat:no-repeat}
 header nav .logo{background:url("/images/logo.png") 0 0 no-repeat;-webkit-transform:rotateY(0) rotateX(0) rotateZ(0);left:-18px;height:100px;background-size:95%;width:175px;top:-1px}
 header nav div.options{margin-left:150px}
 header nav div.title{color:#505359;position:absolute;z-index:5;font-size:2.2em;font-family:Georgia;font-style:italic;text-align:center;width:100%;-webkit-transition:all .5s ease-in-out}

@@ -88,7 +88,7 @@ class Kiosk extends Renderer
 			@renderMaps(data)
 
 	fetchAnnouncementsData : () =>
-		url = "#{@baseURI}/announcement/?room__venue=#{@venueID}&format=jsonp&callback=?"
+		url = "#{@baseURI}/announcement/?venues=#{@venueID}&format=jsonp&callback=?"
 		
 		#fetch announcements
 		$.getJSON url, (data) =>
