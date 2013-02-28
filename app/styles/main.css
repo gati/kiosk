@@ -20,9 +20,9 @@ header nav div.option .updates.front{background-position:50% 84%}
 header nav div.option .trending{background-image:url("/images/trending.png");background-repeat:no-repeat;}
 header nav div.option .trending.top{background-position:50% -36%}
 header nav div.option .trending.front{background-position:50% 117%}
-header nav div.option .map{background-image:url("/images/map.png");background-repeat:no-repeat;background-size:45%;}
-header nav div.option .map.top{background-position:50% -32%}
-header nav div.option .map.front{background-position:50% 132%}
+header nav div.option .map{background-image:url("/images/map.png");background-repeat:no-repeat;background-size:50%;}
+header nav div.option .map.top{background-position:48% -14%}
+header nav div.option .map.front{background-position:50% 109%}
 header nav div.option .info{background-image:url("/images/info.png");background-repeat:no-repeat;background-size:45%;}
 header nav div.option .info.top{background-position:50% -5%}
 header nav div.option .info.front{background-position:50% 117%}
