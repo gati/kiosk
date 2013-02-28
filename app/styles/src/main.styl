@@ -94,8 +94,10 @@ header
 					text-shadow:0 0 1px #000
 				.box
 					-webkit-transform: rotateY(23deg) rotateX(-408deg);
-				.top, .front
+				.top
 					background-color:rgba(246,148,96,1)
+				.front
+					background-color:#562711;
 				.venue
 					background-image:url('/images/venue-active.png');
 					background-repeat:no-repeat;
@@ -153,6 +155,8 @@ header
 				width:100%;
 				height:100%;
 				margin:0 auto
+				box-shadow:13px 13px 0px rgba(246,149,97,0.4);
+				border:20px solid #fff
 			.image
 				width:100%;
 			h2.sub
@@ -195,7 +199,7 @@ header
 			margin:5px;
 			padding:10px;
 			border-radius:5px;
-			box-shadow:10px 12px 0px rgba(246,149,97,1);
+			box-shadow:10px 12px 0px rgba(246,149,97,0.4);
 
 			img 
 				width:100%;
@@ -273,7 +277,7 @@ header
 	color:rgba(238,99,75,1)
 	padding:30px 35px;
 	min-width:38%;
-	box-shadow:10px 12px 0px rgba(246,149,97,1);
+	box-shadow:10px 12px 0px rgba(246,149,97,0.4);
 	margin:10px 15px 60px 10px;
 	position:relative;
 	float:left;
@@ -284,11 +288,11 @@ header
 	&:before
 		content: "";
 		position: absolute;
-		bottom: -45px;
+		bottom: -47px;
 		left: 32px;
-		border-width: 0 0 40px 40px;
+		border-width: 0 0 35px 35px;
 		border-style: solid;
-		border-color: transparent rgba(246,149,97,1)
+		border-color: transparent rgba(246,149,97,0.4);
 
 	&:after
 		content: "";
