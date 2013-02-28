@@ -25,6 +25,9 @@ class Kiosk extends Renderer
 	fetchKioskSlides : () =>
 		url = "#{@baseURI}/presentation/?room__venue=#{@venueID}&format=jsonp&callback=?"
 		$.getJSON url, (res) =>
+			console.log('SPEED',res.objects[0].transition_time * 1000)
+			# set the transition speed
+			@transitionSpeed = res.objects[0].transition_time * 1000 ? 30000
 			@renderSlides(res)
 			@fetchScheduleData()
 			@fetchMapData()

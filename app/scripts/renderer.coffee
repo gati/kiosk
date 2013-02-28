@@ -4,7 +4,7 @@ class Renderer
 	constructor: () ->
 		@templates = {}
 		@$kiosk = $('[kiosk]')
-
+		@transitionSpeed = 5000
 		self = @
 
 		#store the handlebars templates
@@ -35,7 +35,7 @@ class Renderer
 
 		#start the slideshow
 		@slideshow = new SlideShow({
-			intervalSpeed : 5000,
+			intervalSpeed : @transitionSpeed,
 			debug : true
 		})
 
