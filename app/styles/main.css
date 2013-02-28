@@ -14,9 +14,9 @@ header nav div.option .shuttle.front{background-position:50% 103%;background-siz
 header nav div.option .social{background-image:url("/images/social.png");background-repeat:no-repeat;}
 header nav div.option .social.top{background-position:50% 12%;background-size:42%}
 header nav div.option .social.front{background-position:50% 127%;background-size:42%}
-header nav div.option .updates{background-image:url("/images/updates.png");background-repeat:no-repeat;background-size:45%;}
-header nav div.option .updates.top{background-position:50% 1%}
-header nav div.option .updates.front{background-position:50% 76%}
+header nav div.option .updates{background-image:url("/images/updates.png");background-repeat:no-repeat;background-size:40%;}
+header nav div.option .updates.top{background-position:50% -10%}
+header nav div.option .updates.front{background-position:50% 84%}
 header nav div.option .trending{background-image:url("/images/trending.png");background-repeat:no-repeat;}
 header nav div.option .trending.top{background-position:50% -36%}
 header nav div.option .trending.front{background-position:50% 117%}
