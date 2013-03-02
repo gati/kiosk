@@ -27,8 +27,8 @@ class Kiosk extends Renderer
 		$.getJSON url, (res) =>
 			console.log('SPEED',res.objects[0].transition_time * 1000)
 			# set the transition speed
-			@transitionSpeed = res.objects[0].transition_time * 1000 ? 30000
-			@renderSlides(res)
+			@transitionSpeed = 5000 #res.objects[0].transition_time * 1000 ? 30000
+			@render(res)
 			@fetchScheduleData()
 			@fetchMapData()
 			@fetchAnnouncementsData()
@@ -88,7 +88,9 @@ class Kiosk extends Renderer
 			@renderMaps(data)
 
 	fetchAnnouncementsData : () =>
-		url = "#{@baseURI}/announcement/?venues=#{@venueID}&format=jsonp&callback=?"
+		range = moment()
+		start = range.format('YYYY-MM-DDTHH:mm:ss')
+		url = "#{@baseURI}/announcement/?venues=#{@venueID}&start__lte=#{start}&end__gte=#{start}&format=jsonp&callback=?"
 		
 		#fetch announcements
 		$.getJSON url, (data) =>

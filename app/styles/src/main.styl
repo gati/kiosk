@@ -5,7 +5,7 @@ body
 	overflow:hidden
 	padding:0
 	margin:0
-	background:rgba(150,202,216,1);
+	background:#82a4b3;
 ul, li
 	padding:0
 	margin:0
@@ -159,9 +159,10 @@ header
 			-webkit-transition:all 0.5s ease-in-out;
 			
 #kiosk
-	-webkit-transition:all 0.5s ease-in-out
 	text-align:center;
-	overflow hidden
+	overflow hidden;
+	z-index:10;
+	-webkit-transition: -webkit-transform 2.5s ease-in-out
 	.slide
 		height:100%;
 		max-height:100%
@@ -169,6 +170,7 @@ header
 		display:block
 		float:left;
 		margin-top:215px;
+		z-index:10;
 		.content
 			width:80%;
 			height:80%;
@@ -181,6 +183,7 @@ header
 				border:20px solid #fff
 			.image
 				width:100%;
+				z-index:10;
 			h2.sub
 				font-style:italic
 	.slide.visible
@@ -210,7 +213,7 @@ header
 	[slide-type="url"]
 	[slide-type="updates"]
 	[slide-type="venue"]
-		background:rgba(150,202,216,1);
+		background:transparent;
 	
 	#maps
 		float:right;
@@ -397,3 +400,46 @@ header
 	//     height:0;
 	//     left:-32px;
 	//     border: 17px solid transparent;
+
+#scene
+	width:100%;
+	
+	display:none;
+	section.skyline
+		background:url('/images/skyline.png') 0 80% no-repeat;
+		background-repeat:repeat-x;
+		height:100%;
+		width:100%;
+		position:absolute;
+		bottom:0;
+		z-index:-1;
+		-webkit-transition:-webkit-transform 2.5s linear;
+
+	section.crowd
+		background:url('/images/crowd.png') 0 90% no-repeat;
+		background-repeat:repeat-x;
+		// background-size:100%;
+		height:100%;
+		width:100%;
+		position:absolute;
+		bottom:0;
+		z-index:-1;
+		-webkit-transition:-webkit-transform 2.5s linear;
+
+	section.characters
+		z-index:100000;
+		position:absolute;
+		bottom:0
+		-webkit-transition:-webkit-transform 2.5s linear;
+		.character
+			height:100%;
+			width:100%;
+			float:left;
+			display:block
+			&.texter
+				background:url('/images/texter.png') 100% 100% no-repeat;
+				
+			&.walker
+				background:url('/images/walker.png') 100% 100% no-repeat;
+
+

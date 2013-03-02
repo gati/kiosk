@@ -4,7 +4,15 @@ class Renderer
 	constructor: () ->
 		@templates = {}
 		@$kiosk = $('[kiosk]')
+		@$scene = $('#scene')
+		@$skyline = @$scene.find('.skyline')
+		@$crowd = @$scene.find('.crowd')
+		@$characters = @$scene.find('.characters')
+		@$leftScene = @$scene.find('.from-left')
+		@containerWidth = 0
 		@transitionSpeed = 5000
+		@winWidth = $(window).outerWidth()
+
 		self = @
 
 		#store the handlebars templates
@@ -12,7 +20,7 @@ class Renderer
 			el = $(this)
 			self.templates[el.attr('template')] = Handlebars.compile(el.html())
 	
-	renderSlides : (data) =>
+	render : (data) =>
 		console.log 'TEMPLATES', @templates
 		console.log 'RAW DATA', data
 
@@ -32,14 +40,14 @@ class Renderer
 
 		@attachEvents()
 		@resizeSlides()
+		@adjustScene () =>
+			#start the slideshow
+			@slideshow = new SlideShow({
+				intervalSpeed : @transitionSpeed,
+				debug : true
+			})
 
-		#start the slideshow
-		@slideshow = new SlideShow({
-			intervalSpeed : @transitionSpeed,
-			debug : true
-		})
-
-		@slideshow.start()
+			@slideshow.start()
 
 	renderSchedule : (data) =>
 		console.log('SCHEDULE', data)
@@ -56,16 +64,29 @@ class Renderer
 		container.html(@templates['bubbles'](data))
 
 	resizeSlides : () =>
+		self = @
 		#force panels to be viewport height
-		containerWidth = 0
 		@$kiosk.find('.slide').each () ->
 			el = $(this)
 			el.height($(window).height())
 			el.width($(window).outerWidth())
-			containerWidth += el.outerWidth()
+			self.containerWidth += el.outerWidth()
 
-		@$kiosk.width(containerWidth)
+		@$kiosk.width(@containerWidth)
 
+	adjustScene : (callback) =>
+		callback = callback or () =>
+		# @$scene.width(@containerWidth)
+		self = @
+		# adjust each "scene" section to the kiosk width
+		@$scene.find('section').width(self.containerWidth)
+		@$characters.find('.character').each () ->
+			el = $(this)
+			el.height($(window).height())
+			el.width($(window).outerWidth())
+
+		@$leftScene.css('-webkit-transform', 'translateX(-'+(@containerWidth - @winWidth)+'px)')
+		callback()
 
 	attachEvents : () =>
 		doc = $(document)

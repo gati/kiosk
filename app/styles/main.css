@@ -1,5 +1,5 @@
 *{font-family:'Helvetica-Neue-Ultralite',Helvetica;font-weight:300}
-body{overflow:hidden;padding:0;margin:0;background:#96cad8}
+body{overflow:hidden;padding:0;margin:0;background:#82a4b3}
 ul,li{padding:0;margin:0;list-style:none}
 #background{width:100%;right:0;position:absolute;top:0;background:#a6c0d7;height:100%}
 header{color:#fff;position:fixed;top:0;width:100%;z-index:1;text-align:center;margin:25px 0 0 15%;-webkit-perspective:700;-webkit-transform:scale(1.4);}
@@ -41,11 +41,11 @@ header nav div.option.selected .map{background-image:url("/images/map-active.png
 header nav .logo{background:url("/images/logo.png") 0 0 no-repeat;-webkit-transform:rotateY(0) rotateX(0) rotateZ(0);left:-18px;height:100px;background-size:95%;width:175px;top:-1px}
 header nav div.options{margin-left:150px}
 header nav div.title{color:#505359;position:absolute;z-index:5;font-size:2.2em;font-family:Georgia;font-style:italic;text-align:center;width:100%;-webkit-transition:all .5s ease-in-out}
-#kiosk{-webkit-transition:all .5s ease-in-out;text-align:center;overflow:hidden;}
-#kiosk .slide{height:100%;max-height:100%;width:100%;display:block;float:left;margin-top:215px;}
+#kiosk{text-align:center;overflow:hidden;z-index:10;-webkit-transition:-webkit-transform 2.5s ease-in-out;}
+#kiosk .slide{height:100%;max-height:100%;width:100%;display:block;float:left;margin-top:215px;z-index:10;}
 #kiosk .slide .content{width:80%;height:80%;margin:0 auto;}
 #kiosk .slide .content iframe{width:100%;height:100%;margin:0 auto;box-shadow:13px 13px 0 rgba(246,149,97,0.4);border:20px solid #fff}
-#kiosk .slide .content .image{width:100%}
+#kiosk .slide .content .image{width:100%;z-index:10}
 #kiosk .slide .content h2.sub{font-style:italic}
 #kiosk .slide.visible{opacity:1}
 #kiosk [slide-type="schedule"] ul{margin-top:5px;}
@@ -53,7 +53,7 @@ header nav div.title{color:#505359;position:absolute;z-index:5;font-size:2.2em;f
 #kiosk [slide-type="schedule"] ul li .event-cell{padding:5px 15px 5px 5px;max-width:33%;float:left;text-align:left}
 #kiosk [slide-type="schedule"] ul li .event-name{font-size:1.2em;font-style:italic;max-width:40%;word-wrap:break-word}
 #kiosk [slide-type="schedule"] ul li.header{background:#ccc;text-align:center}
-#kiosk [slide-type="image"],#kiosk [slide-type="url"],#kiosk [slide-type="updates"],#kiosk [slide-type="venue"]{background:#96cad8}
+#kiosk [slide-type="image"],#kiosk [slide-type="url"],#kiosk [slide-type="updates"],#kiosk [slide-type="venue"]{background:transparent}
 #kiosk #maps{float:right;width:50%;}
 #kiosk #maps .map{float:right;background:#fff;margin:5px;padding:10px;border-radius:5px;box-shadow:10px 12px 0 rgba(246,149,97,0.4);}
 #kiosk #maps .map img{width:100%}
@@ -88,3 +88,10 @@ header nav div.title{color:#505359;position:absolute;z-index:5;font-size:2.2em;f
 .arrow{-webkit-transform:rotateZ(45deg);height:50px;width:50px;position:absolute;left:-50px;top:5px;border:5px solid #fff;border-right:0;border-top:0}
 .tab{color:#fff;text-shadow:3px 3px 1px #be5429;width:200px;max-width:250px;position:relative;background:url("/images/time-arrow.png") 0 0 no-repeat;background-size:100%;}
 .tab .text{font-family:Georgia;padding:3px 14px 18px 34px;font-size:2.4em}
+#scene{width:100%;display:none;}
+#scene section.skyline{background:url("/images/skyline.png") 0 80% no-repeat;background-repeat:repeat-x;height:100%;width:100%;position:absolute;bottom:0;z-index:-1;-webkit-transition:-webkit-transform 2.5s linear}
+#scene section.crowd{background:url("/images/crowd.png") 0 90% no-repeat;background-repeat:repeat-x;height:100%;width:100%;position:absolute;bottom:0;z-index:-1;-webkit-transition:-webkit-transform 2.5s linear}
+#scene section.characters{z-index:100000;position:absolute;bottom:0;-webkit-transition:-webkit-transform 2.5s linear;}
+#scene section.characters .character{height:100%;width:100%;float:left;display:block;}
+#scene section.characters .character.texter{background:url("/images/texter.png") 100% 100% no-repeat}
+#scene section.characters .character.walker{background:url("/images/walker.png") 100% 100% no-repeat}
