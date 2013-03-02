@@ -49,7 +49,7 @@ class SlideShow
 		@slideshowInterval = setInterval () =>
 			if @index is @count
 				@translateWidth = 0
-				@sceneTranslateWidth = @$kioskWidth - @winWidth
+				@sceneTranslateWidth = @$kioskWidth
 				@slide(0)
 				@index = 1
 				@updateNav(@index)

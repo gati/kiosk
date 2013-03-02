@@ -89,9 +89,9 @@ header nav div.title{color:#505359;position:absolute;z-index:5;font-size:2.2em;f
 .tab{color:#fff;text-shadow:3px 3px 1px #be5429;width:200px;max-width:250px;position:relative;background:url("/images/time-arrow.png") 0 0 no-repeat;background-size:100%;}
 .tab .text{font-family:Georgia;padding:3px 14px 18px 34px;font-size:2.4em}
 #scene{width:100%;display:none;}
-#scene section.skyline{background:url("/images/skyline.png") 0 80% no-repeat;background-repeat:repeat-x;height:100%;width:100%;position:absolute;bottom:0;z-index:-1;-webkit-transition:-webkit-transform 2.5s linear}
-#scene section.crowd{background:url("/images/crowd.png") 0 90% no-repeat;background-repeat:repeat-x;height:100%;width:100%;position:absolute;bottom:0;z-index:-1;-webkit-transition:-webkit-transform 2.5s linear}
-#scene section.characters{z-index:100000;position:absolute;bottom:0;-webkit-transition:-webkit-transform 2.5s linear;}
+#scene section.skyline{background:url("/images/skyline.png") 0 80% no-repeat;background-repeat:repeat-x;height:100%;width:100%;position:absolute;bottom:0;z-index:-1;-webkit-transition:-webkit-transform 2s linear}
+#scene section.crowd{background:url("/images/crowd.png") 0 90% no-repeat;background-repeat:repeat-x;height:100%;width:100%;position:absolute;bottom:0;z-index:-1;-webkit-transition:-webkit-transform 2s linear}
+#scene section.characters{z-index:100000;position:absolute;bottom:0;-webkit-transition:-webkit-transform 2s linear;}
 #scene section.characters .character{height:100%;width:100%;float:left;display:block;}
 #scene section.characters .character.texter{background:url("/images/texter.png") 100% 100% no-repeat}
 #scene section.characters .character.walker{background:url("/images/walker.png") 100% 100% no-repeat}
