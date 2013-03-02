@@ -95,3 +95,9 @@ header nav div.title{color:#505359;position:absolute;z-index:5;font-size:2.2em;f
 #scene section.characters .character{height:100%;width:100%;float:left;display:block;}
 #scene section.characters .character.texter{background:url("/images/texter.png") 100% 100% no-repeat}
 #scene section.characters .character.walker{background:url("/images/walker.png") 100% 100% no-repeat}
+#scene section.characters .character.dancer{background:url("/images/dancer.png") 100% 100% no-repeat}
+#scene section.characters .character.friends{background:url("/images/friends.png") 100% 100% no-repeat}
+#scene section.characters .character.van{background:url("/images/van.png") 100% 100% no-repeat}
+#scene section.characters .character.instagrammer{background:url("/images/instagrammer.png") 100% 100% no-repeat}
+#scene section.characters .character.tumbleweed{background:url("/images/tumbleweed.png") 100% 100% no-repeat}
+#scene section.characters .character.hydrant{background:url("/images/hydrant.png") 100% 100% no-repeat}
