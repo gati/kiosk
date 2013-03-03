@@ -50,9 +50,6 @@ class SlideShow
 
 		@slideshowInterval = setInterval () =>
 			if @index is @count
-				if !@$characters.is(':visible')
-					@$characters.show()
-
 				@translateWidth = 0
 				@sceneTranslateWidth = @$kioskWidth
 				@slide(0)
@@ -60,6 +57,8 @@ class SlideShow
 				@updateNav(@index)
 				return
 			else
+				if @index is 1
+					@$characters.show()
 				@index++
 
 			@slide(@translateWidth)
