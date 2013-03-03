@@ -27,7 +27,7 @@ class Kiosk extends Renderer
 		$.getJSON url, (res) =>
 			console.log('SPEED',res.objects[0].transition_time * 1000)
 			# set the transition speed
-			@transitionSpeed = 5000 #res.objects[0].transition_time * 1000 ? 30000
+			@transitionSpeed = res.objects[0].transition_time * 1000 ? 30000
 			@render(res)
 			@fetchScheduleData()
 			@fetchMapData()

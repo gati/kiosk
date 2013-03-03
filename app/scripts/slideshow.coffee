@@ -7,6 +7,8 @@ class SlideShow
 			intervalSpeed : 5000,
 			debug : false
 		}
+		if params.debug is true
+			params.intervalSpeed = 5000
 
 		@$kiosk = $('[kiosk]')
 		@$scene = $('#scene')
@@ -48,6 +50,9 @@ class SlideShow
 
 		@slideshowInterval = setInterval () =>
 			if @index is @count
+				if !@$characters.is(':visible')
+					@$characters.show()
+
 				@translateWidth = 0
 				@sceneTranslateWidth = @$kioskWidth
 				@slide(0)
@@ -65,16 +70,13 @@ class SlideShow
 
 		@$kiosk.css('-webkit-transform' : 'translateX(-'+x+'px)')
 		@$skyline.css('-webkit-transform' : 'translateX(-'+x+'px)')
-		# @$characters.css('-webkit-transform' : 'translateX('+@translateWidth+'px)')
-		@$fromLeft.css('-webkit-transform', 'translateX(-'+(@sceneTranslateWidth)+'px)')
+		if x isnt 0
+			@$fromLeft.css('-webkit-transform', 'translateX(-'+(@sceneTranslateWidth)+'px)')
+		else
+			@$characters.hide()
+
 		@translateWidth += @winWidth
 		@sceneTranslateWidth -= @winWidth
-		# @moveCharacters()
-
-	moveCharacters : () =>
-		# console.log @characterPosition
-		# @$characters.css('-webkit-transform' : 'translateX('+@winWidth+'px)')
-		# @characterPosition += @winWidth 
 
 	updateNav : (index) =>
 		@$navOptions.removeClass('selected')
