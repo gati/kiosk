@@ -115,6 +115,7 @@
                 <div class="character car"></div>
             </section>
         </section>
+        
         <!-- This is the only element required for the kiosk -->
         <div id="kiosk" kiosk="true"></div>
 
@@ -122,6 +123,7 @@
         <div id="sponsor">
             <img src="/images/oracle.png" />
         </div>
+
         <script src="scripts/vendor/jquery.min.js"></script>
         <script src="scripts/vendor/handlebars.min.js"></script>
         <script src="scripts/vendor/underscore.min.js"></script>
@@ -130,13 +132,14 @@
         <script src="scripts/renderer.js"></script>
         <script src="scripts/kiosk.js"></script>
 
-        <!-- Templates -->
+        <!-- SLIDE TEMPLATES -->
         <script id="venue-template" template="venue" type="text/x-handlebars-template">
             <div class="slide" slide-type="venue">
                 <div class="content">
                     <ul id="events-list"></ul>
                     <div id="maps"></div>
                 </div>
+                <div class="desc">{{body}}</div>
             </div>
         </script>                  
         <script id="announcments-template" template="announcements" type="text/x-handlebars-template">
@@ -144,6 +147,7 @@
                 <div class="content">
                     <div id="announcement-bubbles"></div>
                 </div>
+                <div class="desc">{{body}}</div>
             </div>
         </script>
         <script id="image-template" template="image" type="text/x-handlebars-template">
@@ -151,6 +155,7 @@
                 <div class="content">
                     <img class="image" src="{{image}}" />
                 </div>
+                <div class="desc">{{body}}</div>
             </div>
         </script>
         <script id="url-template" template="url" type="text/x-handlebars-template">
@@ -158,9 +163,11 @@
                 <div class="content">
                     <iframe src={{url}} seamless></iframe>
                 </div>
+                <div class="desc">{{body}}</div>
             </div>
         </script>
-        <!-- END TEMPLATES -->
+        <!-- END SLIDE TEMPLATES -->
+
         <!-- SUB TEMPLATES -->
         <script id="events-template" template="events" type="text/x-handlebars-template">
             {{#events}}
