@@ -3,7 +3,7 @@
 body{overflow:hidden;padding:0;margin:0;background:#a8dde1}
 ul,li{padding:0;margin:0;list-style:none}
 #background{width:100%;right:0;position:absolute;top:0;background:#a6c0d7;height:100%}
-header{color:#fff;position:fixed;top:0;width:100%;z-index:1;text-align:center;margin:25px 0 0 15%;-webkit-perspective:700;-webkit-transform:scale(1.4);}
+header{color:#fff;position:fixed;top:0;width:100%;z-index:1;text-align:center;margin:25px 0 0 10%;-webkit-perspective:700;-webkit-transform:scale(1.4);}
 header nav{width:200%;margin:20px auto;text-align:center;-webkit-transform:rotateY(40deg);-webkit-transform-origin:0 0;}
 header nav div.option{width:150px;float:left;position:relative;top:4px;z-index:4;-webkit-transition:all .2s ease-in-out;}
 header nav div.option .top{background-position:50% -35%;background-size:32%}
