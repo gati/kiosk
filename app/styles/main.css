@@ -93,23 +93,7 @@ header nav div.title{color:#505359;position:absolute;z-index:5;font-size:1.5em;f
 #scene section.skyline{background:url("/images/skyline.png") 0 80% no-repeat;background-repeat:repeat-x;height:100%;width:100%;position:absolute;bottom:0;z-index:-1;-webkit-transition:-webkit-transform 2s linear}
 #scene section.crowd{background:url("/images/crowd.png") 0 90% no-repeat;background-repeat:repeat-x;height:100%;width:100%;position:absolute;bottom:0;z-index:-1;-webkit-transition:-webkit-transform 2s linear}
 #scene section.characters{z-index:100000;position:absolute;bottom:0;-webkit-transition:-webkit-transform 2s linear;}
-#scene section.characters .character{height:100%;width:100%;float:left;display:block;}
-#scene section.characters .character.texter{background:url("/images/foreground/texter.png") 100% 100% no-repeat}
-#scene section.characters .character.walker{background:url("/images/foreground/walker.png") 100% 100% no-repeat}
-#scene section.characters .character.dancer{background:url("/images/foreground/dancer.png") 100% 100% no-repeat}
-#scene section.characters .character.friends{background:url("/images/foreground/friends.png") 100% 100% no-repeat}
-#scene section.characters .character.van{background:url("/images/foreground/van.png") 100% 100% no-repeat}
-#scene section.characters .character.instagrammer{background:url("/images/foreground/instagrammer.png") 100% 100% no-repeat}
-#scene section.characters .character.tumbleweed{background:url("/images/foreground/tumbleweed.png") 100% 100% no-repeat}
-#scene section.characters .character.hydrant{background:url("/images/foreground/hydrant.png") 100% 100% no-repeat}
-#scene section.characters .character.car{background:url("/images/foreground/car.png") 100% 100% no-repeat}
-#scene section.characters .character.bike-guy{background:url("/images/foreground/bike-guy.png") 100% 100% no-repeat}
-#scene section.characters .character.bike-girl{background:url("/images/foreground/bike-girl.png") 100% 100% no-repeat}
-#scene section.characters .character.girl{background:url("/images/foreground/girl.png") 100% 100% no-repeat}
-#scene section.characters .character.group{background:url("/images/foreground/group.png") 100% 100% no-repeat}
-#scene section.characters .character.punk-and-bike{background:url("/images/punkandbike.png") 100% 100% no-repeat}
-#scene section.characters .character.man{background:url("/images/foreground/man1.png") 100% 100% no-repeat}
-#scene section.characters .character.woman{background:url("/images/foreground/woman.png") 100% 100% no-repeat}
-#scene section.characters .character.woman2{background:url("/images/foreground/woman2.png") 100% 100% no-repeat}
+#scene section.characters .group{width:100%;float:left;display:block;}
+#scene section.characters .group img{float:right;display:block}
 #sponsor{position:fixed;bottom:0;z-index:10000000;width:100%;text-align:center;padding:5px;}
 #sponsor img{margin:0 auto}
