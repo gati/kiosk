@@ -1,3 +1,7 @@
+@font-face {
+	font-family: 'United';
+	src: url('/fonts/UnitedSerifSemiExt-Bold.otf'); /* IE9 Compat Modes */
+}
 *
 	font-family:'Helvetica-Neue-Ultralite', Helvetica
 	font-weight:300
@@ -5,7 +9,7 @@ body
 	overflow:hidden
 	padding:0
 	margin:0
-	background:#82a4b3;
+	background:#A8DDE1;
 ul, li
 	padding:0
 	margin:0
@@ -34,7 +38,7 @@ header
 		text-align center;
 		-webkit-transform:rotateY(40deg)
 		-webkit-transform-origin: 0 0;
-		
+
 		div.option
 			width:150px;
 			float:left;
@@ -112,7 +116,7 @@ header
 				.top
 					background-color:rgba(246,148,96,1)
 				.front
-					background-color:#562711;
+					background-color:#52270F;
 				.venue
 					background-image:url('/images/venue-active.png');
 					background-repeat:no-repeat;
@@ -150,9 +154,8 @@ header
 			color:rgba(80,83,89,1);
 			position: absolute;
 			z-index: 5;
-			font-size: 2.2em;
-			font-family: Georgia;
-			font-style: italic;
+			font-size: 1.5em;
+			font-family:"United", Georgia
 			text-align: center;
 			width: 100%;
 			-webkit-transition:all 0.5s ease-in-out;
@@ -287,15 +290,16 @@ header
   height: 50px;
 }
 
-.box .front  { background-color:rgba(49,58,65,1);-webkit-transform: rotateY(   0deg ) translateZ(  24px ); }
+.box .front  { background-color:#151618;-webkit-transform: rotateY(   0deg ) translateZ(  24px ); }
 .box .back   { -webkit-transform: rotateX( 180deg ) translateZ(  24px ); }
-.box .top    { background-color:rgba(80,83,89,1);-webkit-transform: rotateX(  90deg ) translateZ( 26px ); }
+.box .top    { background-color:#313A40;-webkit-transform: rotateX(  90deg ) translateZ( 26px ); }
 .box .bottom { -webkit-transform: rotateX( -90deg ) translateZ( 26px ); }
 
 
 //bubbles
 #announcement-bubbles
 	overflow:hidden
+
 .bubble
 	background:#fff;
 	color:rgba(238,99,75,1)
@@ -331,14 +335,14 @@ header
 		max-width:100%;
 	.headline
 		font-size:2.5em;
-		font-family:Georgia;
+		font-family:"United", Georgia;
 		margin:10px 0;
 	.text 
 		font-family:Arial,sans;
 		color:rgba(238,98,75,1);
 		margin:20px 0;
 		font-size:1.2em;
-		line-height:1.2em;
+		line-height:1.5em;
 	.timestamp
 		text-align:right;
 		font-size:11px;
