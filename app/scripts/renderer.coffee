@@ -80,9 +80,10 @@ class Renderer
 		self = @
 		# adjust each "scene" section to the kiosk width
 		@$scene.find('section').width(self.containerWidth)
-		@$characters.find('.character').each () ->
+		# @$characters.height($(window).height())
+
+		@$characters.find('.group').each () ->
 			el = $(this)
-			el.height($(window).height())
 			el.width($(window).outerWidth())
 
 		@$leftScene.css('-webkit-transform', 'translateX(-'+(@containerWidth)+'px)')

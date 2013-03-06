@@ -3,7 +3,7 @@
 body{overflow:hidden;padding:0;margin:0;background:#a8dde1}
 ul,li{padding:0;margin:0;list-style:none}
 #background{width:100%;right:0;position:absolute;top:0;background:#a6c0d7;height:100%}
-header{color:#fff;position:fixed;top:0;width:100%;z-index:1;text-align:center;margin:25px 0 0 15%;-webkit-perspective:700;-webkit-transform:scale(1.4);}
+header{color:#fff;position:fixed;top:0;width:100%;z-index:1;text-align:center;margin:25px 0 0 10%;-webkit-perspective:700;-webkit-transform:scale(1.2);}
 header nav{width:200%;margin:20px auto;text-align:center;-webkit-transform:rotateY(40deg);-webkit-transform-origin:0 0;}
 header nav div.option{width:150px;float:left;position:relative;top:4px;z-index:4;-webkit-transition:all .2s ease-in-out;}
 header nav div.option .top{background-position:50% -35%;background-size:32%}
@@ -93,14 +93,7 @@ header nav div.title{color:#505359;position:absolute;z-index:5;font-size:1.5em;f
 #scene section.skyline{background:url("/images/skyline.png") 0 80% no-repeat;background-repeat:repeat-x;height:100%;width:100%;position:absolute;bottom:0;z-index:-1;-webkit-transition:-webkit-transform 2s linear}
 #scene section.crowd{background:url("/images/crowd.png") 0 90% no-repeat;background-repeat:repeat-x;height:100%;width:100%;position:absolute;bottom:0;z-index:-1;-webkit-transition:-webkit-transform 2s linear}
 #scene section.characters{z-index:100000;position:absolute;bottom:0;-webkit-transition:-webkit-transform 2s linear;}
-#scene section.characters .character{height:100%;width:100%;float:left;display:block;}
-#scene section.characters .character.texter{background:url("/images/texter.png") 100% 100% no-repeat}
-#scene section.characters .character.walker{background:url("/images/walker.png") 100% 100% no-repeat}
-#scene section.characters .character.dancer{background:url("/images/dancer.png") 100% 100% no-repeat}
-#scene section.characters .character.friends{background:url("/images/friends.png") 100% 100% no-repeat}
-#scene section.characters .character.van{background:url("/images/van.png") 100% 100% no-repeat}
-#scene section.characters .character.instagrammer{background:url("/images/instagrammer.png") 100% 100% no-repeat}
-#scene section.characters .character.tumbleweed{background:url("/images/tumbleweed.png") 100% 100% no-repeat}
-#scene section.characters .character.hydrant{background:url("/images/hydrant.png") 100% 100% no-repeat}
+#scene section.characters .group{width:100%;float:left;display:block;}
+#scene section.characters .group img{float:right;display:block}
 #sponsor{position:fixed;bottom:0;z-index:10000000;width:100%;text-align:center;padding:5px;}
 #sponsor img{margin:0 auto}

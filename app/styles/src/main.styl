@@ -29,9 +29,9 @@ header
 	width: 100%;
 	z-index: 1;
 	text-align: center;
-	margin: 25px 0 0 15%;
+	margin: 25px 0 0 10%;
 	-webkit-perspective: 700;
-	-webkit-transform: scale(1.4);
+	-webkit-transform: scale(1.2);
 	nav
 		width:200%;
 		margin:20px auto;
@@ -428,33 +428,19 @@ header
 		bottom:0;
 		z-index:-1;
 		-webkit-transition:-webkit-transform 2s linear;
-
 	section.characters
 		z-index:100000;
 		position:absolute;
-		bottom:0
+		bottom:0;
 		-webkit-transition:-webkit-transform 2s linear;
-		.character
-			height:100%;
+		.group
 			width:100%;
 			float:left;
 			display:block
-			&.texter
-				background:url('/images/texter.png') 100% 100% no-repeat;				
-			&.walker
-				background:url('/images/walker.png') 100% 100% no-repeat;		
-			&.dancer
-				background:url('/images/dancer.png') 100% 100% no-repeat;		
-			&.friends
-				background:url('/images/friends.png') 100% 100% no-repeat;
-			&.van
-				background:url('/images/van.png') 100% 100% no-repeat;	
-			&.instagrammer
-				background:url('/images/instagrammer.png') 100% 100% no-repeat;
-			&.tumbleweed
-				background:url('/images/tumbleweed.png') 100% 100% no-repeat;
-			&.hydrant
-				background:url('/images/hydrant.png') 100% 100% no-repeat;
+			img
+				float:right;
+				display:block
+
 #sponsor
 	position:fixed;
 	bottom:0;
