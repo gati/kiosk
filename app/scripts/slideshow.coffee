@@ -45,7 +45,7 @@ class SlideShow
 		    	@updateNav(slideIndex)
 		    	@index = slideIndex - 1
 		    	@translateWidth = @winWidth * @index
-		    	@sceneTranslateWidth = (@$kioskWidth + (@winWidth * 2)) / @index
+		    	@sceneTranslateWidth = Math.floor((@$kioskWidth + Math.floor(@winWidth * 2)) / @index)
 		    	@slide(@translateWidth, @sceneTranslateWidth)
 		    	return
 
