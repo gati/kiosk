@@ -54,7 +54,7 @@ class Kiosk extends Renderer
 				event = events[i]
 				start = moment(event.start)
 				end = moment(event.end).format('h:mma')
-				format = start.format('h:mma')
+				format = start.format('h:mm a')
 				hr = start.hours()
 
 				event.end = end

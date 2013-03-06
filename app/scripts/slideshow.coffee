@@ -57,7 +57,7 @@ class SlideShow
 				@updateNav(@index)
 				return
 			else
-				if @index is 1
+				if @index is 0
 					@$characters.show()
 				@index++
 

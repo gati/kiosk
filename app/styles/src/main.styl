@@ -110,7 +110,6 @@ header
 
 				.title
 					color:rgba(192,81,57,1)
-					text-shadow:0 0 1px #000
 				.box
 					-webkit-transform: rotateY(23deg) rotateX(-408deg);
 				.top
@@ -238,11 +237,35 @@ header
 			overflow:hidden
 		li.header
 			margin-top:20px;
-			.tab
-				margin-bottom:5px;
+			height:80px;
+			text-transform:uppercase;
+			.prism-container
 				float:right;
+				margin-right:20px;
+				.text
+					position: relative;
+					top: -26px;
+					font-size: 1.4em;
+					left:8px
+				.prism
+					position:relative;
+					left:0;
+					-webkit-transform: rotateY(-30deg) rotateX(8deg);
+					figure.top 
+						background-color:#f69563
+					figure.bottom
+						background-color:#5f2300
+					figure.front
+						background-color:#f69563
+					figure.back
+						background-color:#5f2300
+					figure.left
+						background-color:#5f2300
+					figure.right
+						background-color:#5f2300
+
 		li.header:first-child
-			margin-top:5px;
+			margin-top:0;
 		li.event 
 			color:rgba(105,61,40,1);
 			font-size:1.3em;
@@ -254,6 +277,7 @@ header
 				padding:2px 5px;
 			.room
 				font-style:italic;
+
 
 .container {
   width: 157px;
@@ -290,10 +314,17 @@ header
   height: 50px;
 }
 
-.box .front  { background-color:#151618;-webkit-transform: rotateY(   0deg ) translateZ(  24px ); }
+.box .front  { -webkit-transform: rotateY(   0deg ) translateZ(  24px ); }
 .box .back   { -webkit-transform: rotateX( 180deg ) translateZ(  24px ); }
-.box .top    { background-color:#313A40;-webkit-transform: rotateX(  90deg ) translateZ( 26px ); }
+.box .top    { -webkit-transform: rotateX(  90deg ) translateZ( 26px ); }
 .box .bottom { -webkit-transform: rotateX( -90deg ) translateZ( 26px ); }
+
+nav 
+	.front
+		background-color:#151618;
+nav
+	.top
+		background-color:#313A40;
 
 
 //bubbles
@@ -438,8 +469,9 @@ header
 			float:left;
 			display:block
 			img
-				float:right;
 				display:block
+				position:relative;
+				bottom:0;
 
 #sponsor
 	position:fixed;
@@ -451,3 +483,45 @@ header
 	img
 		margin:0 auto;
 
+
+
+.prism-container
+	width: 150px;
+	height: 50px;
+	position: relative;
+	
+	.prism
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		-webkit-transform-style: preserve-3d;
+		figure
+			display: block;
+			position: absolute;
+			border: 2px solid transparent;
+
+		.front
+			width: 150px;
+			height: 48px;
+
+		.right
+			width: 120px;
+			height: 48px;
+			left: 74px;
+			top: 1px;
+		.bottom 
+			width: 150px;
+			height: 30px;
+			top: 36px;
+			left: -20px;
+
+		.front  { -webkit-transform: rotateY(   0deg ) translateZ(  50px ); }
+		.right  { -webkit-transform: rotateY(113deg) translateZ(-2px);}
+		.bottom { -webkit-transform: rotateX(-70deg) translateZ(0px);}
+
+.shadow 
+	box-shadow:13px 13px 0px rgba(246,149,97,0.4);
+.left 
+	float:left;
+.right 
+	float:right;

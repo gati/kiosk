@@ -106,44 +106,40 @@
             <section class="crowd from-left"></section>
             <section class="characters from-left">
                 <div class="group">
-                    <img src="images/foreground/texter.png" />
-                    <img src="images/foreground/bike-guy.png" />
-                    <img src="images/foreground/dancer.png" />
+                    <img src="images/foreground/bike-guy.png" class="left" />
+                    <img src="images/foreground/texter.png" class="right" />
                 </div>
                 <div class="group">
-                    <img src="images/foreground/texter.png" />
-                    <img src="images/foreground/bike-girl.png" />
-                    <img src="images/foreground/woman.png" />
+                    <img src="images/foreground/group.png" class="left" />
+                    <img src="images/foreground/woman4.png" class="left" />
+                    <img src="images/foreground/group.png" class="right" />
+                </div>
+                <div class="group">
+                    <img src="images/foreground/girl.png" class="left" />
+                    <img src="images/foreground/van.png" class="right" />
+                </div>
+                <div class="group">
+                    <img src="images/foreground/man1.png" class="left" />
+                    <img src="images/foreground/hydrant.png" class="left" />
+                    <img src="images/foreground/punkandbike.png" class="right" />
+                </div>
+                <div class="group">
+                    <img src="images/foreground/bike-girl.png" class="left" />
+                    <img src="images/foreground/woman.png" class="left" />
+                    <img src="images/foreground/woman2.png" class="right" />
+                    <img src="images/foreground/bike-guy.png" class="right" />
                 </div>
                  <div class="group">
-                    <img src="images/foreground/man1.png" />
-                    <img src="images/foreground/punkandbike.png" />
-                    <img src="images/foreground/woman.png" />
+                    <img src="images/foreground/car.png" class="left" />
+                    <img src="images/foreground/instagrammer.png" class="right" />
                 </div>
                  <div class="group">
-                    <img src="images/foreground/woman2.png" />
-                    <img src="images/foreground/bike-girl.png" />
-                    <img src="images/foreground/people.png" />
+                    <img src="images/foreground/walker.png" class="left" />
+                    <img src="images/foreground/group.png" class="right" />
                 </div>
                  <div class="group">
-                    <img src="images/foreground/man1.png" />
-                    <img src="images/foreground/bike-girl.png" />
-                    <img src="images/foreground/woman.png" />
-                </div>
-                 <div class="group">
-                    <img src="images/foreground/tumbleweed.png" />
-                    <img src="images/foreground/hydrant.png" />
-                    <img src="images/foreground/woman.png" />
-                </div>
-                 <div class="group">
-                    <img src="images/foreground/texter.png" />
-                    <img src="images/foreground/bike-girl.png" />
-                    <img src="images/foreground/woman.png" />
-                </div>
-                 <div class="group">
-                    <img src="images/foreground/man1.png" />
-                    <img src="images/foreground/bike-girl.png" />
-                    <img src="images/foreground/woman.png" />
+                    <img src="images/foreground/friends.png" class="left" />
+                    <img src="images/foreground/bike-guy.png" class="right" />
                 </div>
 
             </section>
@@ -204,7 +200,16 @@
         <!-- SUB TEMPLATES -->
         <script id="events-template" template="events" type="text/x-handlebars-template">
             {{#events}}
-                <li class="header"><div class="tab"><div class="text">{{this.prettyTime}}</div></div></li>
+                <li class="header">
+                    <div class="prism-container">
+                        <div class="prism">
+                            <figure class="front"></figure>
+                            <figure class="right"></figure>
+                            <figure class="bottom"></figure>
+                        </div>
+                        <div class="text">{{this.prettyTime}}</div>
+                    </div>
+                </li>
                 {{#this.events}}
                     <li class="event">
                         <div class="room">{{this.room.name}}</div>
