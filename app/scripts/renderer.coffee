@@ -86,7 +86,7 @@ class Renderer
 			el = $(this)
 			el.width($(window).outerWidth())
 
-		@$leftScene.css('-webkit-transform', 'translateX(-'+(@containerWidth)+'px)')
+		@$leftScene.css('-webkit-transform', 'translateX(-'+(@containerWidth - $(window).outerWidth())+'px)')
 		callback()
 
 	attachEvents : () =>

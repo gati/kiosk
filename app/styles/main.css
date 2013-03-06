@@ -103,8 +103,8 @@ nav .top{background-color:#313a40}
 #scene section.skyline{background:url("/images/skyline.png") 0 80% no-repeat;background-repeat:repeat-x;height:100%;width:100%;position:absolute;bottom:0;z-index:-1;-webkit-transition:-webkit-transform 2s linear}
 #scene section.crowd{background:url("/images/crowd.png") 0 90% no-repeat;background-repeat:repeat-x;height:100%;width:100%;position:absolute;bottom:0;z-index:-1;-webkit-transition:-webkit-transform 2s linear}
 #scene section.characters{z-index:100000;position:absolute;bottom:0;-webkit-transition:-webkit-transform 2s linear;}
-#scene section.characters .group{width:100%;float:left;display:block;}
-#scene section.characters .group img{display:block;position:relative;bottom:0}
+#scene section.characters .group{width:100%;float:left;display:block;position:relative;}
+#scene section.characters .group img{display:block}
 #sponsor{position:fixed;bottom:0;z-index:10000000;width:100%;text-align:center;padding:5px;}
 #sponsor img{margin:0 auto}
 .prism-container{width:150px;height:50px;position:relative;}
