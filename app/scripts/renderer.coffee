@@ -25,8 +25,8 @@ class Renderer
 		console.log 'RAW DATA', data
 
 		@data = {}
-		@data.id = data.objects[0].id
-		@data.slides = data.objects[0].presentation_screens
+		@data.id = data.id
+		@data.slides = data.presentation_screens
 
 		console.log('SLIDES', @data.slides)
 		#store kiosk id in DOM

@@ -23,11 +23,13 @@ class Kiosk extends Renderer
 		return decodeURIComponent( (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[null,""])[1] )
 
 	fetchKioskSlides : () =>
-		url = "#{@baseURI}/presentation/?room__venue=#{@venueID}&format=jsonp&callback=?"
+		url = "#{@baseURI}/presentation/#{@venueID}?format=jsonp&callback=?"
 		$.getJSON url, (res) =>
-			console.log('SPEED',res.objects[0].transition_time * 1000)
+			console.log(res)
+			console.log('SPEED',res.transition_time * 1000)
 			# set the transition speed
-			@transitionSpeed = res.objects[0].transition_time * 1000 ? 30000
+			console.log 'testststst', res
+			@transitionSpeed = res.transition_time * 1000 ? 30000
 			@render(res)
 			@fetchScheduleData()
 			@fetchMapData()
