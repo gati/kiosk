@@ -25,10 +25,8 @@ class Kiosk extends Renderer
 	fetchKioskSlides : () =>
 		url = "#{@baseURI}/presentation/#{@venueID}?format=jsonp&callback=?"
 		$.getJSON url, (res) =>
-			console.log(res)
-			console.log('SPEED',res.transition_time * 1000)
+			console.log('Transition time : ',res.transition_time * 1000+'ms')
 			# set the transition speed
-			console.log 'testststst', res
 			@transitionSpeed = res.transition_time * 1000 ? 30000
 			@render(res)
 			@fetchScheduleData()
@@ -50,7 +48,7 @@ class Kiosk extends Renderer
 		schedule.events = []
 		group = {}
 		$.getJSON url, (data) =>
-			console.log('RAW SCHEDULE', data)
+			console.log('Raw schedule data : ', data)
 			events = data.objects
 			for i in [0...events.length]
 				event = events[i]
@@ -78,7 +76,7 @@ class Kiosk extends Renderer
 			schedule.events = _(schedule.events).sortBy (event) =>
 				return event.key
 
-			console.log('SCHEDULE!!!',schedule)
+			console.log('Transformed schedule data : ',schedule)
 			@renderSchedule(schedule)
 		, (err) =>
 			console.log err
@@ -96,18 +94,20 @@ class Kiosk extends Renderer
 		
 		#fetch announcements
 		$.getJSON url, (data) =>
-			console.log('ANNOUNCEMENTS', data)
+			console.log('Announcements : ', data)
 			filteredData = {}
 			filteredData.objects = []
 			firstPublished = false
+
 			#filter out announcements that aren't published
-			for i in [0..data.objects.length-1]
-				object = data.objects[i]
-				if object.status is 'published'
-					formatted = moment(object.start).format('h:mma dddd MMMM D')
-					object.key = moment(object.start).unix()
-					object.start = formatted
-					filteredData.objects.push(object)
+			if data.objects.length
+				for i in [0..data.objects.length-1]
+					object = data.objects[i]
+					if object.status is 'published'
+						formatted = moment(object.start).format('h:mma dddd MMMM D')
+						object.key = moment(object.start).unix()
+						object.start = formatted
+						filteredData.objects.push(object)
 			
 			# sort by start time
 			filteredData.objects = _(filteredData.objects).sortBy (event) =>
@@ -116,7 +116,9 @@ class Kiosk extends Renderer
 			filteredData.objects.reverse()
 
 			# set the first announcement's display to a bigger bubble
-			filteredData.objects[0].main = true
+			if data.objects.length
+				filteredData.objects[0].main = true
+
 			@renderAnnouncements(filteredData)
 
 	setRefreshIntervals : () =>
@@ -137,7 +139,7 @@ class Kiosk extends Renderer
 
 $(document).ready ->
 	window.Kiosk = new Kiosk({
-		debug : true
+		debug : false
 	})
 
 	window.Kiosk.start()

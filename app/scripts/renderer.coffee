@@ -21,14 +21,14 @@ class Renderer
 			self.templates[el.attr('template')] = Handlebars.compile(el.html())
 	
 	render : (data) =>
-		console.log 'TEMPLATES', @templates
-		console.log 'RAW DATA', data
+		console.log 'Templates : ', @templates
+		console.log 'Raw data from /presentation : ', data
 
 		@data = {}
 		@data.id = data.id
 		@data.slides = data.presentation_screens
 
-		console.log('SLIDES', @data.slides)
+		console.log('Slides : ', @data.slides)
 		#store kiosk id in DOM
 		@$kiosk.attr('kiosk', @data.id)
 
@@ -44,18 +44,17 @@ class Renderer
 			#start the slideshow
 			@slideshow = new SlideShow({
 				intervalSpeed : @transitionSpeed,
-				debug : true
+				debug : false
 			})
 
 			@slideshow.start()
 
 	renderSchedule : (data) =>
-		console.log('SCHEDULE', data)
 		container = $('#events-list')
 		container.html(@templates['events'](data))
 
 	renderMaps : (data) =>
-		console.log 'MAPS', data
+		console.log 'Maps : ', data
 		container = $('#maps')
 		container.html(@templates['maps'](data))
 
