@@ -52,14 +52,13 @@ class SlideShow
 		@slideshowInterval = setInterval () =>
 			if @index is @count
 				@translateWidth = 0
-				@sceneTranslateWidth = @$kioskWidth - @winWidth
-				@slide(0, 0)
+				@sceneTranslateWidth = @$kioskWidth - (@winWidth * 2)
+				@$characters.hide()
+				@slide(0, @sceneTranslateWidth)
 				@index = 1
 				@updateNav(@index)
 				return
 			else
-				if @index is 0
-					@$characters.show()
 				@index++
 
 			@slide(@translateWidth, @sceneTranslateWidth)
@@ -75,6 +74,9 @@ class SlideShow
 
 		@translateWidth += @winWidth
 		@sceneTranslateWidth -= @winWidth
+		setTimeout () =>
+			@$characters.show()
+		, 2000
 
 	updateNav : (index) =>
 		@$navOptions.removeClass('selected')
