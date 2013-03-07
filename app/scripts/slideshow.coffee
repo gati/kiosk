@@ -7,7 +7,7 @@ class SlideShow
 			intervalSpeed : 5000,
 			debug : false
 		}
-		
+
 		if params.debug is true
 			params.intervalSpeed = 5000
 
@@ -67,7 +67,6 @@ class SlideShow
 		, @config.intervalSpeed
 
 	slide : (kioskPosition, scenePosition) =>
-		console.log scenePosition
 		@$kiosk.css('-webkit-transform' : 'translateX(-'+kioskPosition+'px)')
 		@$skyline.css('-webkit-transform' : 'translateX(-'+kioskPosition+'px)')
 		@$fromLeft.css('-webkit-transform', 'translateX(-'+scenePosition+'px)')
