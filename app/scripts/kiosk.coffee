@@ -100,6 +100,7 @@ class Kiosk extends Renderer
 			firstPublished = false
 
 			#filter out announcements that aren't published
+			data.objects = []
 			if data.objects.length
 				for i in [0..data.objects.length-1]
 					object = data.objects[i]
