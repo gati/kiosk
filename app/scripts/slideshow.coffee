@@ -33,7 +33,7 @@ class SlideShow
 		@count = @$panels.length
 		@winWidth = $(window).innerWidth()
 		@translateWidth = @winWidth
-		@sceneTranslateWidth = @$kioskWidth - @winWidth
+		@sceneTranslateWidth = @$kioskWidth - (@winWidth * 2)
 		@index = 1
 		@config = $.extend({}, @config, params)
 		
@@ -45,34 +45,33 @@ class SlideShow
 		    	@updateNav(slideIndex)
 		    	@index = slideIndex - 1
 		    	@translateWidth = @winWidth * @index
-		    	@slide(@translateWidth)
+		    	@sceneTranslateWidth = Math.floor((@$kioskWidth + Math.floor(@winWidth * 2)) / @index)
+		    	@slide(@translateWidth, @sceneTranslateWidth)
 		    	return
 
 		@slideshowInterval = setInterval () =>
 			if @index is @count
 				@translateWidth = 0
-				@sceneTranslateWidth = @$kioskWidth
-				@slide(0)
+				@sceneTranslateWidth = @$kioskWidth - @winWidth
+				@slide(0, 0)
 				@index = 1
 				@updateNav(@index)
 				return
 			else
-				if @index is 1
+				if @index is 0
 					@$characters.show()
 				@index++
 
-			@slide(@translateWidth)
+			@slide(@translateWidth, @sceneTranslateWidth)
 			@updateNav(@index)
 		, @config.intervalSpeed
 
-	slide : (x) =>
-
-		@$kiosk.css('-webkit-transform' : 'translateX(-'+x+'px)')
-		@$skyline.css('-webkit-transform' : 'translateX(-'+x+'px)')
-		if x isnt 0
-			@$fromLeft.css('-webkit-transform', 'translateX(-'+(@sceneTranslateWidth)+'px)')
-		else
-			@$characters.hide()
+	slide : (kioskPosition, scenePosition) =>
+		console.log scenePosition
+		@$kiosk.css('-webkit-transform' : 'translateX(-'+kioskPosition+'px)')
+		@$skyline.css('-webkit-transform' : 'translateX(-'+kioskPosition+'px)')
+		@$fromLeft.css('-webkit-transform', 'translateX(-'+scenePosition+'px)')
+		
 
 		@translateWidth += @winWidth
 		@sceneTranslateWidth -= @winWidth
