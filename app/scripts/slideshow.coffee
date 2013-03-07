@@ -7,6 +7,7 @@ class SlideShow
 			intervalSpeed : 5000,
 			debug : false
 		}
+		
 		if params.debug is true
 			params.intervalSpeed = 5000
 
