@@ -15,7 +15,7 @@ class Kiosk extends Renderer
 		}
 
 		@config = $.extend({}, config, params)
-		
+		@eventLimit = 10
 	start : () =>
 		@fetchKioskSlides()
 	
@@ -41,8 +41,8 @@ class Kiosk extends Renderer
 		
 		range = moment()
 		start = if @config.debug then '2013-03-10T14:00:00' else range.format('YYYY-MM-DDTHH:mm:ss')
-		end = if @config.debug then '2013-03-10T09:00:00' else range.add('hours', 1).format('YYYY-MM-DDTHH:mm:ss')
-		url = "#{@baseURI}/scheduled-event/?room__venue=#{@venueID}&start__gte="+end+"&start__lte="+start+"&format=jsonp&callback=?"
+		end = if @config.debug then '2013-03-10T09:00:00' else range.add('hours', 24).format('YYYY-MM-DDTHH:mm:ss')
+		url = "#{@baseURI}/scheduled-event/?room__venue=#{@venueID}&start__gte="+end+"&format=jsonp&callback=?"
 		# fetch schedule
 		schedule = {}
 		schedule.events = []
@@ -50,6 +50,7 @@ class Kiosk extends Renderer
 		$.getJSON url, (data) =>
 			console.log('Raw schedule data : ', data)
 			events = data.objects
+
 			for i in [0...events.length]
 				event = events[i]
 				start = moment(event.start)
@@ -64,20 +65,46 @@ class Kiosk extends Renderer
 					group[format] = []
 
 				group[format].push(event)
-				
+
 			for j of group
+				
 				schedule.events.push({
 					prettyTime : j,
-					key : group[j][0].key
-					events : group[j]
+					key : group[j][0].key,
+					sessions : group[j]
 				})
 
 			# sort by start time
 			schedule.events = _(schedule.events).sortBy (event) =>
 				return event.key
+			
+			finalData = {
+				events : []
+			}
+			
+			done = false
 
-			console.log('Transformed schedule data : ',schedule)
-			@renderSchedule(schedule)
+			# pair down the events to the correct limit
+			for k in [0...schedule.events.length]
+
+				events = schedule.events[k]
+				events.events = []
+				
+				for l in [0...schedule.events[k].sessions.length]
+					
+					if l is @eventLimit
+						done = true
+						break
+
+					events.events.push(schedule.events[k].sessions[l])
+
+				finalData.events.push(events)
+
+				if done
+					break
+
+			console.log('Transformed schedule data : ',finalData)
+			@renderSchedule(finalData)
 		, (err) =>
 			console.log err
 
