@@ -15,7 +15,7 @@ class Kiosk extends Renderer
 		}
 
 		@config = $.extend({}, config, params)
-		@eventLimit = 10
+		@eventLimit = 2
 	start : () =>
 		@fetchKioskSlides()
 	
