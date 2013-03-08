@@ -51,7 +51,7 @@ class Kiosk extends Renderer
 			console.log('Raw schedule data : ', data)
 			events = data.objects
 
-			for i in [0...events.length-1]
+			for i in [0...events.length]
 				event = events[i]
 				start = moment(event.start)
 				end = moment(event.end).format('h:mma')
@@ -67,7 +67,6 @@ class Kiosk extends Renderer
 				group[format].push(event)
 
 			for j of group
-				
 				schedule.events.push({
 					prettyTime : j,
 					key : group[j][0].key,
