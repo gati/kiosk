@@ -157,13 +157,13 @@ header
 			font-family:"United", Georgia
 			text-align: center;
 			width: 100%;
-			-webkit-transition:all 0.5s ease-in-out;
+			-webkit-transition:all 0.5s;
 			
 #kiosk
 	text-align:center;
 	overflow hidden;
 	z-index:10;
-	-webkit-transition: -webkit-transform 2.5s ease-in-out
+	-webkit-transition: -webkit-transform 2.5s
 	.slide
 		height:100%;
 		max-height:100%
@@ -178,15 +178,23 @@ header
 			margin:0 auto;
 			iframe
 				width:100%;
-				height:100%;
+				height:1294px;
 				margin:0 auto
 				box-shadow:13px 13px 0px rgba(246,149,97,0.4);
 				border:20px solid #fff
+				overflow-y:hidden;
 			.image
 				width:100%;
 				z-index:10;
 			h2.sub
 				font-style:italic
+			.desc
+				width: 100%;
+				margin: 15px auto 0 auto;
+				text-align: left;
+				line-height: 1.5em;
+				color: #c57c56;
+				font-size: 1.2em;
 	.slide.visible
 		opacity:1
 	[slide-type="schedule"]
@@ -368,6 +376,7 @@ nav
 		font-size:2.5em;
 		font-family:"United", Georgia;
 		margin:10px 0;
+		line-height:1.3em;
 	.text 
 		font-family:Arial,sans;
 		color:rgba(238,98,75,1);
@@ -449,12 +458,12 @@ nav
 		position:absolute;
 		bottom:0;
 		z-index:-1;
-		-webkit-transition:-webkit-transform 2s linear;
+		-webkit-transition:-webkit-transform 2s;
 	section.characters
 		z-index:100000;
 		position:absolute;
 		bottom:0;
-		-webkit-transition:-webkit-transform 2s linear;
+		-webkit-transition:-webkit-transform 2s;
 		.group
 			width:100%;
 			float:left;

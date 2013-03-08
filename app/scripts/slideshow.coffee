@@ -13,7 +13,7 @@ class SlideShow
 
 		@$kiosk = $('[kiosk]')
 		@$scene = $('#scene')
-		@$skyline = @$scene.find('.skyline')
+		# @$skyline = @$scene.find('.skyline')
 		@$crowd = @$scene.find('.crowd')
 		@$characters = @$scene.find('.characters')
 		@$fromLeft = @$scene.find('.from-left')
@@ -36,6 +36,8 @@ class SlideShow
 		@translateWidth = @winWidth
 		@sceneTranslateWidth = @$kioskWidth - (@winWidth * 2)
 		@index = 1
+		@currentPanel = 0
+		@showHidden = false
 		@config = $.extend({}, @config, params)
 		
 	start : () =>
@@ -51,32 +53,46 @@ class SlideShow
 		    	return
 
 		@slideshowInterval = setInterval () =>
+
 			if @index is @count
 				@translateWidth = 0
 				@sceneTranslateWidth = @$kioskWidth - (@winWidth * 2)
 				@$characters.hide()
+				@$panels.hide()
+				@showHidden = true
 				@slide(0, @sceneTranslateWidth)
 				@index = 1
 				@updateNav(@index)
+				@currentPanel = 0
 				return
 			else
 				@index++
 
 			@slide(@translateWidth, @sceneTranslateWidth)
 			@updateNav(@index)
+			@currentPanel++
+
+			# refresh iframe slides when the come in
+			currentPanel = @$panels.eq(@currentPanel)
+			if currentPanel.attr('slide-type') is 'url'
+				iframe = currentPanel.find('iframe')[0]
+				iframe.contentDocument.location.reload(true)
+
 		, @config.intervalSpeed
 
 	slide : (kioskPosition, scenePosition) =>
 		@$kiosk.css('-webkit-transform' : 'translateX(-'+kioskPosition+'px)')
-		@$skyline.css('-webkit-transform' : 'translateX(-'+kioskPosition+'px)')
+		# @$skyline.css('-webkit-transform' : 'translateX(-'+kioskPosition+'px)')
 		@$fromLeft.css('-webkit-transform', 'translateX(-'+scenePosition+'px)')
-		
 
 		@translateWidth += @winWidth
 		@sceneTranslateWidth -= @winWidth
-		setTimeout () =>
-			@$characters.show()
-		, 2000
+		if @showHidden
+			setTimeout () =>
+				@$characters.show()
+				@$panels.show()
+				@showHidden = false
+			, 2000
 
 	updateNav : (index) =>
 		@$navOptions.removeClass('selected')
