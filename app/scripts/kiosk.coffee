@@ -11,7 +11,7 @@ class Kiosk extends Renderer
 		config = {
 			debug : false,
 			scheduleRefreshInterval : 1800000, # 30 minutes
-			updatesRefreshInterval : 300000 # 5 minutes 
+			updatesRefreshInterval : 60000 # 5 minutes 
 		}
 
 		@config = $.extend({}, config, params)
@@ -41,7 +41,7 @@ class Kiosk extends Renderer
 		
 		range = moment()
 		start = if @config.debug then '2013-03-10T14:00:00' else range.format('YYYY-MM-DDTHH:mm:ss')
-		end = if @config.debug then '2013-03-10T09:00:00' else range.add('hours', 4).format('YYYY-MM-DDTHH:mm:ss')
+		end = if @config.debug then '2013-03-10T09:00:00' else range.add('hours', 1).format('YYYY-MM-DDTHH:mm:ss')
 		url = "#{@baseURI}/scheduled-event/?room__venue=#{@venueID}&start__gte="+end+"&start__lte="+start+"&format=jsonp&callback=?"
 		# fetch schedule
 		schedule = {}
@@ -100,6 +100,7 @@ class Kiosk extends Renderer
 			firstPublished = false
 
 			#filter out announcements that aren't published
+			data.objects = []
 			if data.objects.length
 				for i in [0..data.objects.length-1]
 					object = data.objects[i]

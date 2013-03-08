@@ -46,13 +46,13 @@
                     <div class="option">
                         <div class="container">
                             <div class="box">
-                                <figure class="front icon map"></figure>
+                                <figure class="front icon shuttle"></figure>
                                 <figure class="back"></figure>
-                                <figure class="top icon map"></figure>
+                                <figure class="top icon shuttle"></figure>
                                 <figure class="bottom"></figure>
                               </div>
                           </div>
-                        <div class="title">Map</div>
+                        <div class="title">Shuttle</div>
                     </div>
                     <div class="option">
                         <div class="container">
@@ -68,13 +68,13 @@
                     <div class="option">
                         <div class="container">
                             <div class="box">
-                                <figure class="front icon shuttle"></figure>
+                                <figure class="front icon map"></figure>
                                 <figure class="back"></figure>
-                                <figure class="top icon shuttle"></figure>
+                                <figure class="top icon map"></figure>
                                 <figure class="bottom"></figure>
                               </div>
                           </div>
-                        <div class="title">Shuttle</div>
+                        <div class="title">Map</div>
                     </div>
                     <div class="option">
                         <div class="container">
@@ -102,7 +102,7 @@
             </nav>
         </header>
         <section id="scene">
-            <section class="skyline"></section>
+            <!-- <section class="skyline"></section> -->
             <section class="crowd from-left"></section>
             <section class="characters from-left">
                 <div class="group">
@@ -111,12 +111,11 @@
                 </div>
                 <div class="group">
                     <img src="images/foreground/friends.png" class="left" />
-                    <img src="images/foreground/woman4.png" class="left" />
                     <img src="images/foreground/group.png" class="right" />
                 </div>
                 <div class="group">
                     <img src="images/foreground/girl.png" class="left" />
-                    <img src="images/foreground/van.png" class="right" />
+                    <img src="images/foreground/bike-girl.png" class="right" />
                 </div>
                 <div class="group">
                     <img src="images/foreground/man1.png" class="left" />
@@ -130,7 +129,7 @@
                     <img src="images/foreground/bike-guy.png" class="right" />
                 </div>
                  <div class="group">
-                    <img src="images/foreground/car.png" class="left" />
+                    <img src="images/foreground/friends.png" class="left" />
                     <img src="images/foreground/instagrammer.png" class="right" />
                 </div>
                  <div class="group">
@@ -176,23 +175,22 @@
                 <div class="content">
                     <div id="announcement-bubbles"></div>
                 </div>
-                <div class="desc">{{body}}</div>
             </div>
         </script>
         <script id="image-template" template="image" type="text/x-handlebars-template">
             <div class="slide" slide-type="image">
                 <div class="content">
                     <img class="image" src="{{image}}" />
+                    <div class="desc">{{body}}</div>
                 </div>
-                <div class="desc">{{body}}</div>
             </div>
         </script>
         <script id="url-template" template="url" type="text/x-handlebars-template">
             <div class="slide" slide-type="url">
                 <div class="content">
-                    <iframe src={{url}} seamless></iframe>
+                    <iframe src={{url}} seamless scrolling="no"></iframe>
+                    <div class="desc">{{body}}</div>
                 </div>
-                <div class="desc">{{body}}</div>
             </div>
         </script>
         <!-- END SLIDE TEMPLATES -->

@@ -5,7 +5,7 @@ class Renderer
 		@templates = {}
 		@$kiosk = $('[kiosk]')
 		@$scene = $('#scene')
-		@$skyline = @$scene.find('.skyline')
+		# @$skyline = @$scene.find('.skyline')
 		@$crowd = @$scene.find('.crowd')
 		@$characters = @$scene.find('.characters')
 		@$leftScene = @$scene.find('.from-left')
@@ -34,6 +34,7 @@ class Renderer
 
 		#render the panels
 		slides = @data.slides
+
 		for i in [0...slides.length]
 			slide = slides[i].screen
 			@$kiosk.append @templates[slide.slide_type](slide)
@@ -41,6 +42,7 @@ class Renderer
 		@attachEvents()
 		@resizeSlides()
 		@adjustScene () =>
+
 			#start the slideshow
 			@slideshow = new SlideShow({
 				intervalSpeed : @transitionSpeed,
@@ -60,6 +62,13 @@ class Renderer
 
 	renderAnnouncements : (data) =>
 		container = $('#announcement-bubbles')
+		# if no announcements, make a dummy one
+		if !data.objects.length
+			data.objects[0] = {
+				title : "No Announcements at this time.",
+				body : "Stay tuned.",
+				main : true
+			}
 		container.html(@templates['bubbles'](data))
 
 	resizeSlides : () =>
