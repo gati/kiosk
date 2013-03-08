@@ -48,7 +48,7 @@ header nav div.title{color:#505359;position:absolute;z-index:5;font-size:1.5em;f
 #kiosk .slide .content iframe{width:100%;height:1035px;margin:0 auto;box-shadow:13px 13px 0 rgba(246,149,97,0.4);border:20px solid #fff;overflow-y:hidden}
 #kiosk .slide .content .image{width:100%;z-index:10}
 #kiosk .slide .content h2.sub{font-style:italic}
-#kiosk .slide .content .desc{width:100%;margin:25px auto 0 auto;text-align:left;line-height:1.5em;color:#c57c56;font-size:1.2em;text-align:center}
+#kiosk .slide .content .desc{width:100%;margin:25px auto 0 auto;text-align:left;line-height:1.5em;color:#c57c56;font-size:1.4em;text-align:left;background:#fff;box-shadow:0 -1px 2px;padding:16px 32px}
 #kiosk .slide.visible{opacity:1}
 #kiosk [slide-type="schedule"] ul{margin-top:5px;}
 #kiosk [slide-type="schedule"] ul li{border-bottom:1px solid #333;padding:10px 0;overflow:hidden;}
