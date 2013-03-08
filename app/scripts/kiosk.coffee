@@ -42,7 +42,7 @@ class Kiosk extends Renderer
 		range = moment()
 		start = if @config.debug then '2013-03-10T14:00:00' else range.format('YYYY-MM-DDTHH:mm:ss')
 		end = if @config.debug then '2013-03-10T09:00:00' else range.add('hours', 24).format('YYYY-MM-DDTHH:mm:ss')
-		url = "#{@baseURI}/scheduled-event/?room__venue=#{@venueID}&start__gte="+end+"&format=jsonp&callback=?"
+		url = "#{@baseURI}/scheduled-event/?limit=0&room__venue=#{@venueID}&start__gte="+start+"&start_lte="+end+"&format=jsonp&callback=?"
 		# fetch schedule
 		schedule = {}
 		schedule.events = []
@@ -51,7 +51,7 @@ class Kiosk extends Renderer
 			console.log('Raw schedule data : ', data)
 			events = data.objects
 
-			for i in [0...events.length]
+			for i in [0...events.length-1]
 				event = events[i]
 				start = moment(event.start)
 				end = moment(event.end).format('h:mma')
@@ -60,7 +60,7 @@ class Kiosk extends Renderer
 
 				event.end = end
 				event.key = start.unix()
-
+				console.log event.key, format
 				if not group[format]
 					group[format] = []
 
@@ -75,13 +75,13 @@ class Kiosk extends Renderer
 				})
 
 			# sort by start time
-			schedule.events = _(schedule.events).sortBy (event) =>
-				return event.key
+			schedule.events = _(schedule.events).sortBy (_event) ->
+				return _event.key
 			
 			finalData = {
 				events : []
 			}
-			
+			console.log 'EEE',schedule.events
 			done = false
 
 			# pair down the events to the correct limit
