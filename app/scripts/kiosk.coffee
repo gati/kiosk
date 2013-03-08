@@ -41,8 +41,8 @@ class Kiosk extends Renderer
 		
 		range = moment()
 		start = if @config.debug then '2013-03-10T14:00:00' else range.format('YYYY-MM-DDTHH:mm:ss')
-		end = if @config.debug then '2013-03-10T09:00:00' else range.add('hours', 24).format('YYYY-MM-DDTHH:mm:ss')
-		url = "#{@baseURI}/scheduled-event/?limit=0&room__venue=#{@venueID}&start__gte="+start+"&start_lte="+end+"&format=jsonp&callback=?"
+		end = if @config.debug then '2013-03-10T09:00:00' else range.add('hours', 18).format('YYYY-MM-DDTHH:mm:ss')
+		url = "#{@baseURI}/scheduled-event/?limit=0&room__venue=#{@venueID}&start__gte="+start+"&start__lte="+end+"&format=jsonp&callback=?"
 		# fetch schedule
 		schedule = {}
 		schedule.events = []
@@ -60,7 +60,7 @@ class Kiosk extends Renderer
 
 				event.end = end
 				event.key = start.unix()
-				console.log event.key, format
+
 				if not group[format]
 					group[format] = []
 
@@ -75,15 +75,15 @@ class Kiosk extends Renderer
 				})
 
 			# sort by start time
-			schedule.events = _(schedule.events).sortBy (_event) ->
+			schedule.events = _(schedule.events).sortBy (_event) =>
 				return _event.key
 			
 			finalData = {
 				events : []
 			}
-			console.log 'EEE',schedule.events
+			
 			done = false
-
+			counter = 0
 			# pair down the events to the correct limit
 			for k in [0...schedule.events.length]
 
@@ -91,12 +91,12 @@ class Kiosk extends Renderer
 				events.events = []
 				
 				for l in [0...schedule.events[k].sessions.length]
-					
-					if l is @eventLimit
+					if counter is @eventLimit
 						done = true
 						break
 
 					events.events.push(schedule.events[k].sessions[l])
+					counter++
 
 				finalData.events.push(events)
 
