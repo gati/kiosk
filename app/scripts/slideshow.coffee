@@ -76,7 +76,7 @@ class SlideShow
 			currentPanel = @$panels.eq(@currentPanel)
 			if currentPanel.attr('slide-type') is 'url'
 				iframe = currentPanel.find('iframe')[0]
-				iframe.contentDocument.location.reload(true)
+				iframe.src = iframe.src
 
 		, @config.intervalSpeed
 
