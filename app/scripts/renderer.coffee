@@ -85,14 +85,14 @@ class Renderer
 		# @$scene.width(@containerWidth)
 		self = @
 		# adjust each "scene" section to the kiosk width
-		@$scene.find('section').width(self.containerWidth)
+		# @$scene.find('section').width(self.containerWidth)
 		# @$characters.height($(window).height())
 
-		@$characters.find('.group').each () ->
-			el = $(this)
-			el.width($(window).outerWidth())
+		# @$characters.find('.group').each () ->
+		# 	el = $(this)
+		# 	el.width($(window).outerWidth())
 
-		@$leftScene.css('-webkit-transform', 'translateX(-'+(@containerWidth - $(window).outerWidth())+'px)')
+		# @$leftScene.css('-webkit-transform', 'translateX(-'+(@containerWidth - $(window).outerWidth())+'px)')
 		callback()
 
 	attachEvents : () =>

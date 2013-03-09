@@ -163,7 +163,8 @@ header
 	text-align:center;
 	overflow hidden;
 	z-index:10;
-	-webkit-transition: -webkit-transform 2.5s
+	position:absolute;
+	// -webkit-transition: -webkit-transform 2.5s
 	.slide
 		height:100%;
 		max-height:100%
@@ -449,7 +450,7 @@ nav
 		position:absolute;
 		bottom:0;
 		z-index:-1;
-		-webkit-transition:-webkit-transform 2s linear;
+		// -webkit-transition:-webkit-transform 2s linear;
 
 	section.crowd
 		background:url('/images/crowd.png') 0 90% no-repeat;
@@ -460,15 +461,17 @@ nav
 		position:absolute;
 		bottom:0;
 		z-index:-1;
-		-webkit-transition:-webkit-transform 2s;
+		// -webkit-transition:-webkit-transform 2s;
 	section.characters
 		z-index:100000;
 		position:absolute;
 		bottom:0;
-		-webkit-transition:-webkit-transform 2s;
+		width:100%;
+		// -webkit-transition:-webkit-transform 2s;
 		.group
 			width:100%;
 			float:left;
+			height:100%;
 			display:block
 			position:relative;
 			img

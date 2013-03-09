@@ -70,18 +70,18 @@ class SlideShow
 		, @config.intervalSpeed
 
 	slide : (kioskPosition, scenePosition) =>
-		@$kiosk.css('-webkit-transform' : 'translateX(-'+kioskPosition+'px)')
+		@$kiosk.css('left' : '-'+kioskPosition+'px')
 		# @$skyline.css('-webkit-transform' : 'translateX(-'+kioskPosition+'px)')
-		@$fromLeft.css('-webkit-transform', 'translateX(-'+scenePosition+'px)')
+		# @$fromLeft.css('-webkit-transform', 'translateX(-'+scenePosition+'px)')
 
 		@translateWidth += @winWidth
 		@sceneTranslateWidth -= @winWidth
-		if @showHidden
-			setTimeout () =>
-				@$characters.show()
-				@$panels.show()
-				@showHidden = false
-			, 2000
+		# if @showHidden
+		# 	setTimeout () =>
+		# 		@$characters.show()
+		# 		@$panels.show()
+		# 		@showHidden = false
+		# 	, 2000
 
 	updateNav : (index) =>
 		@$navOptions.removeClass('selected')

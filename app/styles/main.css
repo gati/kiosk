@@ -42,7 +42,7 @@ header nav div.option.selected .map{background-image:url("/images/map-active.png
 header nav .logo{background:url("/images/logo.png") 0 0 no-repeat;-webkit-transform:rotateY(0) rotateX(0) rotateZ(0);left:-18px;height:100px;background-size:95%;width:175px;top:-1px}
 header nav div.options{margin-left:150px}
 header nav div.title{color:#505359;position:absolute;z-index:5;font-size:1.5em;font-family:"United",Georgia;text-align:center;width:100%;-webkit-transition:all .5s}
-#kiosk{text-align:center;overflow:hidden;z-index:10;-webkit-transition:-webkit-transform 2.5s;}
+#kiosk{text-align:center;overflow:hidden;z-index:10;position:absolute;}
 #kiosk .slide{height:100%;max-height:100%;width:100%;display:block;float:left;margin-top:215px;z-index:10;}
 #kiosk .slide .content{width:80%;height:80%;margin:0 auto;}
 #kiosk .slide .content iframe{width:100%;height:1270px;margin:0 auto;box-shadow:13px 13px 0 rgba(246,149,97,0.4);border:20px solid #fff;overflow-y:hidden}
@@ -101,10 +101,10 @@ nav .top{background-color:#313a40}
 .tab{color:#fff;text-shadow:3px 3px 1px #be5429;width:200px;max-width:250px;position:relative;background:url("/images/time-arrow.png") 0 0 no-repeat;background-size:100%;}
 .tab .text{font-family:Georgia;padding:3px 14px 18px 34px;font-size:2.4em}
 #scene{width:100%;display:none;}
-#scene section.skyline{background:url("/images/skyline.png") 0 80% no-repeat;background-repeat:repeat-x;height:100%;width:100%;position:absolute;bottom:0;z-index:-1;-webkit-transition:-webkit-transform 2s linear}
-#scene section.crowd{background:url("/images/crowd.png") 0 90% no-repeat;background-repeat:repeat-x;height:100%;width:100%;position:absolute;bottom:0;z-index:-1;-webkit-transition:-webkit-transform 2s}
-#scene section.characters{z-index:100000;position:absolute;bottom:0;-webkit-transition:-webkit-transform 2s;}
-#scene section.characters .group{width:100%;float:left;display:block;position:relative;}
+#scene section.skyline{background:url("/images/skyline.png") 0 80% no-repeat;background-repeat:repeat-x;height:100%;width:100%;position:absolute;bottom:0;z-index:-1}
+#scene section.crowd{background:url("/images/crowd.png") 0 90% no-repeat;background-repeat:repeat-x;height:100%;width:100%;position:absolute;bottom:0;z-index:-1}
+#scene section.characters{z-index:100000;position:absolute;bottom:0;width:100%;}
+#scene section.characters .group{width:100%;float:left;height:100%;display:block;position:relative;}
 #scene section.characters .group img{display:block;}
 #scene section.characters .group img.left{position:absolute;bottom:0}
 #sponsor{position:fixed;bottom:0;z-index:10000000;width:100%;text-align:center;padding:5px;}
