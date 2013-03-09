@@ -55,16 +55,7 @@ class SlideShow
 		@slideshowInterval = setInterval () =>
 
 			if @index is @count
-				@translateWidth = 0
-				@sceneTranslateWidth = @$kioskWidth - (@winWidth * 2)
-				@$characters.hide()
-				@$panels.hide()
-				@showHidden = true
-				@slide(0, @sceneTranslateWidth)
-				@index = 1
-				@updateNav(@index)
-				@currentPanel = 0
-				return
+				window.location.reload(true)
 			else
 				@index++
 
