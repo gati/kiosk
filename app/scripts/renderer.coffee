@@ -5,8 +5,6 @@ class Renderer
 		@templates = {}
 		@$kiosk = $('[kiosk]')
 		@$scene = $('#scene')
-		# @$skyline = @$scene.find('.skyline')
-		@$crowd = @$scene.find('.crowd')
 		@$characters = @$scene.find('.characters')
 		@$leftScene = @$scene.find('.from-left')
 		@containerWidth = 0

@@ -13,8 +13,6 @@ class SlideShow
 
 		@$kiosk = $('[kiosk]')
 		@$scene = $('#scene')
-		# @$skyline = @$scene.find('.skyline')
-		@$crowd = @$scene.find('.crowd')
 		@$characters = @$scene.find('.characters')
 		@$fromLeft = @$scene.find('.from-left')
 		@$scene.show();
