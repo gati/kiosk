@@ -124,10 +124,11 @@ class Kiosk extends Renderer
 			filteredData = {}
 			filteredData.objects = []
 			firstPublished = false
-
+			
 			#filter out announcements that aren't published
-			data.objects = []
+			
 			if data.objects.length
+
 				for i in [0..data.objects.length-1]
 					object = data.objects[i]
 					if object.status is 'published'
